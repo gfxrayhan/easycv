@@ -1,0 +1,1403 @@
+<!DOCTYPE html>
+<html lang="en" class="spl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>EasyCV – Free CV Builder, Passport Photo Maker &amp; ATS Resume Checker</title>
+<meta name="description" content="Three free tools in one simple workspace: build a professional CV (Europass style templates), make a passport photo with background remover and a print sheet, and check your resume's ATS readiness. No sign-up. Your files stay on your device.">
+<meta name="theme-color" content="#1d4ed8">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="EasyCV – Free CV Builder, Passport Photo Maker &amp; ATS Resume Checker">
+<meta property="og:description" content="Three free tools in one simple workspace: build a professional CV (Europass style templates), make a passport photo with background remover and a print sheet, and check your resume's ATS readiness. No sign-up. Your files stay on your device.">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2034%2034'%3E%3Crect%20width='34'%20height='34'%20rx='9'%20fill='%231d4ed8'/%3E%3Cpath%20d='M10%207h10l5%205v15a1%201%200%200%201-1%201H10a1%201%200%200%201-1-1V8a1%201%200%200%201%201-1z'%20fill='%23fff'/%3E%3Cpath%20d='M20%207v5h5'%20fill='%23bfdbfe'/%3E%3Cpath%20d='M13%2020.5l3%203%205.5-6.5'%20fill='none'%20stroke='%231d4ed8'%20stroke-width='2.4'%20stroke-linecap='round'%20stroke-linejoin='round'/%3E%3C/svg%3E">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"EasyCV","applicationCategory":"BusinessApplication","operatingSystem":"Any modern web browser","description":"Free CV builder, passport photo maker and ATS resume checker that run in your browser.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"featureList":["CV builder with 6 templates (Europass style included)","Passport photo maker with background remover and print sheet","ATS resume checker (estimated score)","Download as PDF, Word, JPEG and PNG"]}</script>
+<style>
+:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--b:#1d4ed8;--bl:#eff6ff;--tx:#0f172a;--mu:#526071;--bd:#e2e8f0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans Bengali","Helvetica Neue",Arial,sans-serif}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:#f8fafc;color:var(--tx);background:#f8fafc}
+button{font:inherit;cursor:pointer}
+header{display:flex;flex-wrap:wrap;align-items:center;gap:10px 12px;padding:12px 20px;background:#fff;border-bottom:1px solid var(--bd);position:sticky;top:env(safe-area-inset-top,0px);z-index:5}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:17px;color:var(--tx)}
+.logo span{color:var(--b)}
+.sp{flex:1}
+.btn{border:1px solid var(--bd);background:#fff;color:var(--tx);border-radius:10px;padding:8px 14px;font-weight:600;font-size:13px}
+.btn.p{background:var(--b);border-color:var(--b);color:#fff}
+.btn:hover{border-color:var(--b)}
+.btn.p:hover{background:#1e40af}
+.tabs{display:none}
+main{display:grid;grid-template-columns:400px 1fr;gap:20px;padding:20px;max-width:1280px;margin:0 auto}
+#form{display:flex;flex-direction:column;gap:10px;align-self:start}
+.card{background:#fff;border:1px solid var(--bd);border-radius:14px;overflow:hidden}
+.card.open{border-color:#93b4f8;box-shadow:0 4px 18px rgba(29,78,216,.08)}
+.ch{display:flex;align-items:center;gap:10px;padding:12px 14px;cursor:pointer}
+.ch b{flex:1;font-size:14px;font-weight:600}
+.num{width:24px;height:24px;border-radius:50%;background:var(--bl);color:var(--b);font-size:12px;font-weight:700;display:grid;place-items:center}
+.mv button{border:0;background:var(--bl);color:var(--b);border-radius:6px;width:26px;height:24px;font-size:10px;margin-left:3px}
+.cb{padding:4px 14px 14px;display:flex;flex-direction:column;gap:10px}
+label{display:flex;flex-direction:column;gap:4px;font-size:12px;font-weight:500;color:var(--mu);flex:1}
+input,textarea,select{font:inherit;font-size:14px;color:var(--tx);border:1px solid var(--bd);border-radius:9px;padding:8px 10px;background:#fff;width:100%}
+input:focus,textarea:focus,select:focus{outline:2px solid #bfdbfe;border-color:var(--b)}
+textarea{resize:vertical}
+.item{border:1px dashed var(--bd);border-radius:10px;padding:10px;display:flex;flex-direction:column;gap:8px}
+.row{display:flex;gap:8px;align-items:flex-end}
+.lk{border:0;background:none;color:#dc2626;font-size:12px;align-self:flex-end;padding:2px 4px}
+.add{border:1px dashed #93b4f8;background:var(--bl);color:var(--b);border-radius:10px;padding:8px;font-weight:600;font-size:13px}
+.nx{align-self:flex-end;border:0;background:var(--b);color:#fff;border-radius:9px;padding:8px 16px;font-weight:600;font-size:13px}
+.pr{display:flex;align-items:center;gap:12px}
+.pr img,.pr .ph0{width:76px;height:76px;border-radius:50%;object-fit:cover;background:var(--bl);display:grid;place-items:center;color:var(--b);font-size:22px;flex:none}
+.pr input[type=file]{display:none}
+.fl{border:1px solid var(--bd);border-radius:9px;padding:7px 12px;font-size:13px;font-weight:600;cursor:pointer;background:#fff;color:var(--b)}
+#bar{display:flex;flex-direction:column;gap:10px;background:#fff;border:1px solid var(--bd);border-radius:14px;padding:10px 12px;margin-bottom:14px}
+.tp{border:1px solid var(--bd);background:#fff;border-radius:99px;padding:6px 12px;font-size:12px;font-weight:600;color:var(--mu)}
+.tp.on{background:var(--b);border-color:var(--b);color:#fff}
+.sw{width:22px;height:22px;border-radius:50%;border:2px solid #fff;box-shadow:0 0 0 1px var(--bd);padding:0}
+.sw.on{box-shadow:0 0 0 2px var(--tx)}
+#bar input[type=color]{width:30px;height:26px;padding:0;border:0;background:none}
+.dv{width:1px;height:22px;background:var(--bd)}
+#stage{position:relative;width:100%;overflow:hidden;border-radius:14px;background:linear-gradient(180deg,#e8effc,#dfe9fa);padding:16px;min-height:200px}
+#toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--tx);color:#fff;padding:10px 18px;border-radius:10px;font-size:13px;opacity:0;pointer-events:none;transition:.2s;z-index:9}
+#toast.on{opacity:1}
+/* CV */
+.cvx{width:794px;min-height:1123px;background:#fff;color:#1e293b;font:13px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans Bengali","Helvetica Neue",Arial,sans-serif;transform-origin:0 0}
+.cvx *{box-sizing:border-box}
+.cvx h1{font-size:28px;line-height:1.15;margin:0;color:var(--c)}
+.cvx h2{font-size:15px;margin:4px 0 0;font-weight:500;color:#64748b}
+.cvx p{margin:2px 0;white-space:pre-line}
+.cvx .ph{width:150px;height:150px;border-radius:50%;object-fit:cover;flex:none}
+.cvx .hd{display:flex;gap:20px;align-items:center;padding:34px 40px 22px}
+.cvx .it{margin-bottom:9px}
+.cvx .r{display:flex;justify-content:space-between;gap:10px}
+.cvx .r span{color:#64748b;font-size:12px;white-space:nowrap}
+.cvx .c{color:var(--c);font-weight:500}
+.cvx .tg{display:inline-block;padding:1px 10px;border-radius:99px;background:var(--t);margin:2px 4px 2px 0;font-size:12px}
+.cvx .lg{display:grid;grid-template-columns:1fr auto;gap:0 8px;margin-bottom:6px}
+.cvx .lg i{font-style:normal;font-size:11px;opacity:.75}
+.cvx .bar{grid-column:1/3;height:4px;border-radius:4px;background:var(--t)}
+.cvx .bar u{display:block;height:100%;border-radius:4px;background:var(--c)}
+.cvx .kv{display:grid;grid-template-columns:120px 1fr;gap:0 8px}
+.cvx .kv b{font-weight:600}
+.euro .hd{border-bottom:3px solid var(--c)}
+.euro .sc{display:grid;grid-template-columns:170px 1fr;gap:18px;padding:13px 40px;border-bottom:1px solid #e2e8f0}
+.euro .lb{color:var(--c);font-weight:700;text-transform:uppercase;font-size:11px;letter-spacing:.6px;padding-top:2px}
+.single .sc{padding:10px 40px}
+.cvx h3{font-size:12px;text-transform:uppercase;letter-spacing:.8px;color:var(--c);margin:0 0 6px;padding-bottom:4px;border-bottom:2px solid var(--t)}
+.center .hd{flex-direction:column;text-align:center;gap:10px}
+.band .hd{background:var(--c);border:0}
+.cvx.band h1,.cvx.band h2{color:#fff}
+.cvx.side{display:grid;grid-template-columns:250px 1fr}
+.cvx.side .sb{background:var(--c);color:#fff;padding:36px 22px}
+.cvx.side .sb .ph{display:block;margin:0 auto 22px;width:182px;height:182px;border:4px solid rgba(255,255,255,.35)}
+.cvx.side .sb h3{color:#fff;border-color:rgba(255,255,255,.35)}
+.cvx.side .sb .sc{margin-bottom:18px}
+.cvx.side .sb .tg{background:rgba(255,255,255,.2)}
+.cvx.side .sb .bar{background:rgba(255,255,255,.25)}
+.cvx.side .sb .bar u{background:#fff}
+.cvx.side .sb .c{color:#fff}
+.cvx.side .sb .kv{grid-template-columns:1fr;margin-bottom:4px}
+.cvx.side .mn{padding:40px 36px}
+.cvx.side .mn .sc{margin-bottom:18px}
+.cvx.side .mn h1{margin-bottom:0}
+.cvx.side .mn h2{margin-bottom:24px}
+.cvx.side.light .sb{background:var(--t);color:#1e293b}
+.cvx.side.light .sb h3{color:var(--c);border-color:#fff}
+.cvx.side.light .sb .tg{background:#fff}
+.cvx.side.light .sb .bar{background:#fff}
+.cvx.side.light .sb .bar u{background:var(--c)}
+.cvx.side.light .sb .c{color:var(--c)}
+.cvx.side.light .sb .ph{border-color:#fff}
+.opt{font-style:normal;font-size:10px;font-weight:600;color:var(--b);background:var(--bl);border-radius:99px;padding:2px 7px;margin-left:6px;vertical-align:middle}
+.hint{margin:0;font-size:12px;color:var(--mu)}
+.pa{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+label.fl,button.fl{flex:none;width:auto;text-align:center;background:#fff}
+.fl input[type=file]{display:none}
+.pr img.sgp{width:auto;height:48px;border-radius:0;background:#fff;border:1px solid var(--bd)}
+#sp{width:100%;height:130px;touch-action:none;border:1px dashed #93b4f8;border-radius:10px;background:#fff;cursor:crosshair}
+#cm{position:fixed;inset:0;background:rgba(15,23,42,.55);display:none;place-items:center;z-index:20;padding:16px}
+#cm.on{display:grid}
+#cm .bx{background:#fff;border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:12px;align-items:center;width:min(100%,340px)}
+#cvw{width:280px;height:280px;position:relative;overflow:hidden;border-radius:8px;background:#0f172a;touch-action:none;cursor:grab}
+#cvw.rect{background:#e2e8f0;border:1px dashed #94a3b8}
+#cvw.rect .ring{display:none}
+.ch2{border:1px solid var(--bd);background:#fff;color:var(--mu);border-radius:99px;padding:4px 10px;font-size:12px;font-weight:500}
+.ch2:hover{border-color:var(--b);color:var(--b)}
+.ch2.on{background:var(--b);border-color:var(--b);color:#fff}
+#ci{position:absolute;max-width:none;pointer-events:none;user-select:none}
+#cvw .ring{position:absolute;inset:0;border-radius:50%;box-shadow:0 0 0 400px rgba(15,23,42,.55);border:2px solid #fff;pointer-events:none}
+.cvx .sg{padding:18px 40px 30px;text-align:right}
+.cvx .sg img{height:56px;display:block;margin-left:auto}
+.cvx .sg div{display:inline-block;border-top:1px solid #94a3b8;min-width:170px;text-align:center;font-size:12px;color:#475569;padding-top:2px}
+.cvx.side .mn .sg{padding:10px 0}
+.bg{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.bt{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:var(--b);min-width:72px}
+.cu{flex-direction:row;align-items:center;gap:6px;flex:none;font-size:12px}
+#app{display:none}
+body.in #app{display:block}
+body.in #land{display:none}
+#land{min-height:100vh;display:flex;flex-direction:column;background:radial-gradient(700px 420px at 12% 8%,rgba(96,165,250,.38),transparent 70%),radial-gradient(640px 420px at 92% 22%,rgba(56,189,248,.30),transparent 70%),radial-gradient(800px 500px at 60% 100%,rgba(29,78,216,.14),transparent 70%),linear-gradient(180deg,#e6efff 0%,#f4f8ff 50%,#fff 100%)}
+.lw{flex:1;display:flex;flex-direction:column;align-items:center;text-align:center;padding:clamp(50px,10vh,120px) 20px 10px;animation:up .7s ease both}
+.lh{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap}
+.lh h1{margin:0;font-size:clamp(30px,6vw,52px);letter-spacing:-.02em;line-height:1.1;font-weight:700}
+.lh h1 span{background:linear-gradient(90deg,#1d4ed8,#38bdf8);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sl1{margin:18px 0 6px;font-size:clamp(18px,3vw,24px);font-weight:600;color:var(--b)}
+.sl2{margin:0 0 26px;max-width:520px;color:var(--mu);line-height:1.6;font-size:15px}
+.go{border:0;background:linear-gradient(135deg,#1d4ed8,#2563eb);color:#fff;font-weight:600;font-size:17px;padding:15px 34px;border-radius:99px;box-shadow:0 12px 28px rgba(29,78,216,.35);transition:.2s}
+.go span{display:inline-block;transition:.2s}
+.go:hover{filter:brightness(.93);transform:translateY(-2px)}
+.go:hover span{transform:translateX(4px)}
+.scene{perspective:1100px;height:380px;width:100%;display:grid;place-items:center;margin-top:18px}
+.card3d{position:relative;width:210px;height:280px;transform-style:preserve-3d;animation:spin 9s ease-in-out infinite}
+@keyframes spin{0%,100%{transform:rotateX(14deg) rotateY(-30deg) translateY(0)}50%{transform:rotateX(8deg) rotateY(30deg) translateY(-16px)}}
+@keyframes bob{0%,100%{transform:translateZ(90px) translateY(0)}50%{transform:translateZ(90px) translateY(-12px)}}
+@keyframes up{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes sh{0%,100%{transform:translateY(0) rotateX(90deg) scale(1);opacity:.5}50%{transform:translateY(0) rotateX(90deg) scale(.85);opacity:.3}}
+.sheet{position:absolute;inset:0;border-radius:14px;background:#fff;border:1px solid #dbeafe}
+.s3{background:#bfdbfe;transform:translateZ(0)}
+.s2{background:#dbeafe;transform:translateZ(18px)}
+.s1{transform:translateZ(36px);padding:14px;display:flex;flex-direction:column;gap:8px;box-shadow:0 18px 40px rgba(29,78,216,.22);overflow:hidden}
+.hb{display:block;height:66px;margin:-14px -14px 0;background:linear-gradient(135deg,#1d4ed8,#60a5fa)}
+.av{display:block;width:46px;height:46px;border-radius:50%;border:3px solid #fff;margin:-30px 0 2px 6px;background:radial-gradient(circle at 50% 38%,#fff 0 22%,transparent 23%),radial-gradient(ellipse at 50% 100%,#fff 0 45%,transparent 46%),#93c5fd;box-shadow:0 4px 10px rgba(29,78,216,.25)}
+.l{display:block;height:7px;border-radius:4px;background:#e2e8f0}
+.l1{width:60%;height:10px;background:#cbd5e1;margin-top:-4px}
+.l2{width:40%}.l3{width:92%}.l4{width:78%}.l5{width:64%}
+.h{display:block;width:34%;height:8px;border-radius:4px;background:#1d4ed8;margin-top:6px}
+.cp{position:absolute;width:48px;height:48px;border-radius:14px;background:#fff;color:var(--b);font-weight:700;font-size:20px;display:grid;place-items:center;box-shadow:0 12px 26px rgba(29,78,216,.28);transform:translateZ(90px);animation:bob 4s ease-in-out infinite}
+.c1{right:-34px;top:26px}
+.c2{left:-36px;bottom:70px;animation-delay:-1.3s}
+.c3{right:-28px;bottom:26px;font-size:13px;background:var(--b);color:#fff;animation-delay:-2.6s}
+.shd{position:absolute;left:10px;right:10px;bottom:-44px;height:36px;border-radius:50%;background:radial-gradient(closest-side,rgba(29,78,216,.45),transparent);transform:rotateX(90deg);animation:sh 9s ease-in-out infinite}
+.lf{text-align:center;padding:18px 16px calc(24px + env(safe-area-inset-bottom,0px));color:var(--mu);font-size:13px}
+.lf b{color:var(--b);font-weight:600}
+@media(prefers-reduced-motion:reduce){.card3d,.cp,.shd,.lw{animation:none}.card3d{transform:rotateX(12deg) rotateY(-22deg)}}
+#cv{position:absolute;left:0;top:0;visibility:hidden;pointer-events:none}
+#pages{width:794px;margin:0 auto;transform-origin:0 0;display:flex;flex-direction:column;gap:14px}
+.pg{position:relative;flex:none;width:794px;height:1123px;background:#fff;overflow:hidden;box-shadow:0 10px 30px rgba(15,23,42,.18);border-radius:3px}
+.win{position:absolute;left:0;right:0;overflow:hidden}
+.pgl{text-align:center;font-size:12px;font-weight:600;color:#64748b;margin:-2px 0 6px}
+.tk{display:none;width:18px;height:18px;border-radius:50%;background:#16a34a;color:#fff;font-size:11px;font-style:normal;font-weight:700;place-items:center;margin-left:6px;vertical-align:middle}
+.tk.on{display:inline-grid}
+.dd{position:relative}
+.menu{display:none;position:absolute;right:0;top:calc(100% + 6px);background:#fff;border:1px solid var(--bd);border-radius:12px;box-shadow:0 12px 30px rgba(15,23,42,.18);padding:6px;min-width:200px;z-index:30}
+.dd.open .menu{display:block}
+.menu button{display:flex;justify-content:space-between;align-items:center;gap:10px;width:100%;border:0;background:none;padding:10px 12px;border-radius:8px;font-size:14px;font-weight:500;color:var(--tx);text-align:left}
+.menu button:hover{background:var(--bl)}
+.rec{font-style:normal;font-size:10px;font-weight:700;color:#fff;background:var(--b);border-radius:99px;padding:2px 8px}
+.go2{margin-top:12px;border:1.5px solid #93b4f8;background:rgba(255,255,255,.75);color:var(--b);font-weight:600;font-size:15px;padding:12px 26px;border-radius:99px;backdrop-filter:blur(6px);transition:.2s}
+.go2:hover{background:#fff;border-color:var(--b);transform:translateY(-2px)}
+.sl3{margin-top:8px;font-size:12px;color:var(--mu)}
+#pp{display:none}
+body.ph #pp{display:block}
+body.ph #land{display:none}
+.ppw{display:grid;grid-template-columns:380px 1fr;gap:20px;padding:20px;max-width:1100px;margin:0 auto}
+.ppp{background:#fff;border:1px solid var(--bd);border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:12px;align-self:start}
+.ppp h2{margin:0;font-size:18px}
+.ppp .t{font-size:12px;text-transform:uppercase;letter-spacing:.6px;color:var(--b);margin-top:4px}
+.chk{flex-direction:row;align-items:center;gap:8px;font-size:14px;color:var(--tx)}
+.chk input{width:auto}
+.ppv{display:grid;place-items:center;min-height:420px;border-radius:14px;background:linear-gradient(180deg,#e8effc,#dfe9fa);padding:20px}
+#ppc{display:none;max-width:100%;max-height:74vh;width:auto;height:auto;border-radius:3px;box-shadow:0 10px 30px rgba(15,23,42,.2)}
+.ppv.has #ppc{display:block}
+#ppe{color:var(--mu);font-size:14px}
+@media(max-width:900px){.ppw{grid-template-columns:1fr;padding:14px}}
+.ppv{position:relative}
+.dz{display:flex;flex-direction:column;align-items:center;gap:10px;padding:46px 30px;border:2px dashed #93b4f8;border-radius:16px;background:rgba(255,255,255,.7);text-align:center;color:var(--mu);max-width:380px}
+.dz b{color:var(--tx);font-size:16px}
+.dzi{font-size:42px;line-height:1}
+.dz .fl{font-size:15px;padding:10px 24px;background:var(--b);color:#fff;border-color:var(--b)}
+.ppv.drag{outline:3px dashed var(--b);outline-offset:-10px;background:linear-gradient(180deg,#d6e6fb,#c9dcf7)}
+.rmx{position:absolute;top:12px;right:12px;display:none;z-index:2}
+.ppv.has .rmx{display:block}
+#ppcur{position:fixed;display:none;pointer-events:none;border-radius:50%;border:2px solid #fff;box-shadow:0 0 0 1px #0f172a,inset 0 0 0 1px #0f172a;background:rgba(29,78,216,.12);z-index:50}
+.ppv{position:relative;display:grid;place-items:center;padding:0;overflow:hidden}
+#ppst{display:none;position:absolute;inset:0;overflow:hidden;touch-action:none;cursor:grab}
+.ppv.has #ppst{display:block}
+#ppvw{position:absolute;left:0;top:0;transform-origin:0 0}
+#ppvw #ppc{max-width:none;max-height:none}
+.vtb{position:absolute;left:12px;bottom:12px;display:none;gap:6px;align-items:center;background:rgba(255,255,255,.94);border:1px solid var(--bd);border-radius:12px;padding:5px 8px;z-index:3;box-shadow:0 6px 18px rgba(15,23,42,.15)}
+.ppv.has .vtb{display:flex}
+.vtb button{border:0;background:var(--bl);color:var(--b);border-radius:8px;min-width:30px;height:28px;font-weight:700;padding:0 8px}
+.vtb span{font-size:12px;font-weight:600;color:var(--mu);min-width:44px;text-align:center}
+.pcard{background:#fff;border:1px solid var(--bd);border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:12px}
+.pcard .t{font-size:12px;text-transform:uppercase;letter-spacing:.6px;color:var(--b)}
+.ph2{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.adjb{display:none;flex-direction:column;gap:12px}
+.adjb.open{display:flex}
+.lpw{position:relative;width:240px;max-width:100%;aspect-ratio:1;border-radius:12px;background:#f1f5f9;display:grid;place-items:center;text-align:center;font-size:12px;color:var(--mu);padding:14px;margin:0 auto;overflow:hidden}
+.lpw canvas{position:absolute;inset:0;width:100%;height:100%;display:none}
+.lpw.on canvas{display:block}
+.lpw.on span{display:none}
+@media(min-width:901px){
+ .ppw{grid-template-columns:340px minmax(0,1fr) 300px;grid-template-rows:minmax(0,1fr);height:calc(100vh - 124px);min-height:560px;max-width:1500px}
+ .ppp{align-self:stretch;overflow:auto}
+ #ppside{display:flex;flex-direction:column;gap:14px;overflow:auto}
+}
+@media(max-width:900px){
+ .ppv{height:72vh;min-height:360px}
+ #ppside{display:none}
+ .lpw{display:none}
+ .ppp .pcard{border:0;border-top:1px solid var(--bd);border-radius:0;padding:12px 0 0}
+}
+.lsecs{width:100%;max-width:1120px;margin:0 auto;padding:40px 20px 10px}
+.sec{text-align:center;padding:48px 0 12px}
+.sec h2{margin:0;font-size:clamp(24px,4vw,34px);letter-spacing:-.01em}
+.sec .sub{margin:8px 0 26px;color:var(--mu)}
+.sec h3{margin:6px 0 16px;font-size:18px;color:var(--b)}
+.sec h3.gap{margin-top:42px}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:22px}
+.stp{position:relative;background:rgba(255,255,255,.85);border:1px solid #dbe7fb;border-radius:16px;padding:16px 14px 18px;box-shadow:0 8px 22px rgba(29,78,216,.07)}
+.stp svg{width:100%;max-width:150px;height:auto;display:block;margin:0 auto 10px}
+.stp b{display:block;font-size:15px}
+.stp p{margin:6px 0 0;font-size:13px;color:var(--mu);line-height:1.5}
+.sn{position:absolute;top:10px;left:10px;width:24px;height:24px;border-radius:50%;background:var(--b);color:#fff;font-size:12px;font-weight:700;display:grid;place-items:center}
+.go.sm,.go2.sm{font-size:14px;padding:11px 24px;margin-top:0}
+.car2{position:relative;display:flex;align-items:center;gap:8px}
+.track{flex:1;display:flex;gap:22px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:10px 6px 26px;scrollbar-width:none}
+.track::-webkit-scrollbar{display:none}
+.nv{flex:none;width:42px;height:42px;border-radius:50%;border:1px solid var(--bd);background:#fff;color:var(--b);font-size:24px;line-height:1;box-shadow:0 6px 16px rgba(15,23,42,.1)}
+.nv:hover{border-color:var(--b)}
+.slide{flex:none;scroll-snap-align:center;width:250px;border:0;background:none;padding:0;text-align:center;transition:.2s}
+.slide:hover{transform:translateY(-6px)}
+.th{width:250px;height:354px;position:relative;overflow:hidden;border-radius:8px;background:#fff;box-shadow:0 14px 34px rgba(29,78,216,.2);border:1px solid #dbe7fb}
+.th .cvx{position:absolute;left:0;top:0;transform-origin:0 0;pointer-events:none;height:1123px}
+.slide b{display:block;margin-top:12px;font-size:15px;color:var(--tx)}
+.slide span{font-size:12px;color:var(--b);font-weight:600}
+.whys{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:26px}
+.why{background:rgba(255,255,255,.85);border:1px solid #dbe7fb;border-radius:16px;padding:20px 16px;text-align:left;box-shadow:0 8px 22px rgba(29,78,216,.07)}
+.why span{display:grid;place-items:center;width:42px;height:42px;border-radius:12px;background:var(--bl);font-size:22px;margin-bottom:10px}
+.why b{display:block;font-size:15px}
+.why p{margin:6px 0 0;font-size:13px;color:var(--mu);line-height:1.55}
+@media(max-width:900px){.steps,.whys{grid-template-columns:repeat(2,1fr)}.nv{display:none}}
+@media(max-width:520px){.steps,.whys{grid-template-columns:1fr}}
+.tnav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;display:flex;align-items:center;gap:18px;padding:12px max(20px,calc((100% - 1120px)/2));background:rgba(255,255,255,.8);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(219,231,251,.9)}
+.tl{display:flex;align-items:center;gap:10px;font-weight:700;font-size:17px;cursor:pointer}
+.tl span{color:var(--b)}
+.tlinks{margin-left:auto;display:flex;gap:4px}
+.tlinks button{border:0;background:none;font-weight:600;font-size:14px;color:var(--tx);padding:8px 14px;border-radius:99px}
+.tlinks button:hover{background:var(--bl);color:var(--b)}
+.tcta{border:0;background:linear-gradient(135deg,#1d4ed8,#2563eb);color:#fff;font-weight:600;font-size:14px;padding:10px 20px;border-radius:99px;box-shadow:0 8px 18px rgba(29,78,216,.28)}
+.tcta:hover{filter:brightness(.93)}
+.sec{scroll-margin-top:84px}
+.hvw{width:100%;display:flex;justify-content:center;overflow:hidden;margin-top:14px;padding:30px 0 24px}
+.hv{position:relative;flex:none;width:620px;height:440px;text-align:left}
+.arc{position:absolute;border-radius:50%}
+.a1{left:230px;top:-20px;width:380px;height:380px;background:radial-gradient(circle,rgba(147,197,253,.55),rgba(147,197,253,0) 68%)}
+.a2{left:262px;top:6px;width:320px;height:320px;border:2px solid rgba(147,197,253,.45)}
+.rc{position:absolute;left:50px;top:62px;width:350px;height:340px;background:#fff;border-radius:14px;box-shadow:0 18px 44px rgba(29,78,216,.16);padding:22px 24px;display:flex;flex-direction:column;gap:7px;overflow:hidden}
+.rn{font-size:21px;color:var(--b)}
+.rt{font-size:12px;color:var(--mu);margin-top:-4px}
+.ln{display:block;height:6px;border-radius:4px;background:#e2e8f0}
+.rh{font-size:11px;text-transform:uppercase;letter-spacing:.6px;color:var(--b);margin-top:8px}
+.rj{font-size:12px;font-weight:600;text-decoration:none;color:#1e293b}
+.rs{font-size:11px;color:#64748b;margin-top:-5px}
+.av{position:absolute;left:318px;top:10px;width:150px;height:150px;border-radius:50%;padding:6px;background:linear-gradient(135deg,#93c5fd,#1d4ed8);box-shadow:0 14px 34px rgba(29,78,216,.3);animation:pulse 5s ease-in-out infinite}
+.av svg{width:100%;height:100%;border-radius:50%;display:block}
+.fb{position:absolute;background:#fff;border-radius:14px;box-shadow:0 12px 30px rgba(15,23,42,.16);animation:fl 5s ease-in-out infinite}
+.f1{left:-4px;top:6px;display:flex;align-items:center;gap:10px;padding:10px 16px 10px 10px}
+.f1 em{font-style:normal;background:#16a34a;color:#fff;font-weight:700;font-size:20px;width:48px;height:44px;border-radius:8px;display:grid;place-items:center}
+.f1 b{display:block;font-size:14px}
+.f1 span{font-size:11px;color:var(--mu)}
+.f2{white-space:nowrap;left:440px;top:196px;background:linear-gradient(135deg,#6366f1,#3b82f6);color:#fff;font-weight:600;font-size:15px;padding:12px 20px;border-radius:12px;animation-delay:-1.2s}
+.f3{left:388px;top:262px;width:222px;padding:14px;display:flex;flex-wrap:wrap;gap:8px;animation-delay:-2.2s}
+.f3 b{width:100%;font-size:13px}
+.sk{background:#eef2f7;border-radius:8px;padding:7px 11px;font-size:12px;font-weight:500;color:#334155}
+.f4{white-space:nowrap;left:440px;top:384px;background:#eef4ff;color:var(--b);font-weight:600;font-size:15px;padding:10px 18px;border-radius:12px;animation-delay:-3s}
+.f5{white-space:nowrap;left:20px;top:366px;display:flex;align-items:center;gap:10px;padding:11px 18px 11px 11px;border-radius:99px;font-size:13px;font-weight:500;color:#334155;animation-delay:-3.8s}
+.f5 i{font-style:normal;width:32px;height:32px;border-radius:50%;background:var(--b);color:#fff;display:grid;place-items:center;font-weight:700}
+@keyframes fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@keyframes pulse{0%,100%{box-shadow:0 14px 34px rgba(29,78,216,.3)}50%{box-shadow:0 14px 44px rgba(29,78,216,.5)}}
+@media(prefers-reduced-motion:reduce){.fb,.av{animation:none}}
+.fqs{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:10px;text-align:left}
+.fq{background:rgba(255,255,255,.88);border:1px solid #dbe7fb;border-radius:14px;padding:0 18px;box-shadow:0 6px 18px rgba(29,78,216,.06)}
+.fq summary{cursor:pointer;list-style:none;padding:16px 0;font-weight:600;font-size:15px;display:flex;justify-content:space-between;gap:12px;align-items:center}
+.fq summary::-webkit-details-marker{display:none}
+.fq summary::after{content:'+';color:var(--b);font-size:22px;line-height:1;flex:none}
+.fq[open] summary::after{content:'–'}
+.fq p{margin:0 0 16px;color:var(--mu);font-size:14px;line-height:1.65}
+@media(max-width:700px){.tnav{flex-wrap:wrap;gap:8px 10px}.tcta{margin-left:auto;padding:9px 14px;font-size:13px}.tlinks{order:3;width:100%;margin:0;justify-content:center}.tl{font-size:15px}.hvw{height:345px;margin-top:6px}.hv{transform:scale(.62);transform-origin:top center}}
+@media(max-width:440px){.hvw{height:285px}.hv{transform:scale(.5)}.tnav{padding:10px 14px}.tl{font-size:14px;gap:8px}.tl svg{width:26px;height:26px}.tcta{font-size:12.5px;padding:8px 13px}}
+#ats{display:none}
+body.at #ats{display:block}
+body.at #land{display:none}
+.atw{display:grid;grid-template-columns:420px minmax(0,1fr);gap:20px;padding:20px;max-width:1180px;margin:0 auto;align-items:start}
+.atl{background:#fff;border:1px solid var(--bd);border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:12px}
+.atl h2{margin:0;font-size:20px}
+.adz{display:flex;flex-direction:column;align-items:center;gap:8px;padding:26px 16px;border:2px dashed #93b4f8;border-radius:14px;background:#f5f9ff;text-align:center;color:var(--mu)}
+.adz b{color:var(--tx)}
+.adz.drag{background:#dbeafe;border-color:var(--b)}
+.adz .fl{background:var(--b);color:#fff;border-color:var(--b);padding:9px 22px}
+.atr{background:#fff;border:1px solid var(--bd);border-radius:14px;padding:20px;min-height:320px}
+.atp{display:grid;place-items:center;min-height:280px;color:var(--mu);text-align:center}
+.ath{display:flex;gap:20px;align-items:center;flex-wrap:wrap;margin-bottom:16px}
+.ring{width:130px;height:130px;flex:none}
+.ath h3{margin:0;font-size:22px}
+.ath p{margin:4px 0 0;color:var(--mu);font-size:13px;max-width:420px;line-height:1.5}
+.cat{display:grid;grid-template-columns:150px 1fr 54px;gap:10px;align-items:center;font-size:13px;margin:7px 0}
+.cat i{display:block;height:8px;border-radius:6px;background:#e2e8f0;overflow:hidden}
+.cat u{display:block;height:100%;border-radius:6px;background:var(--b)}
+.cat em{font-style:normal;text-align:right;color:var(--mu);font-weight:600}
+.atr h4{margin:20px 0 8px;font-size:12px;text-transform:uppercase;letter-spacing:.6px;color:var(--b)}
+.ck{display:flex;gap:10px;padding:9px 0;border-top:1px solid #eef2f7;font-size:13.5px}
+.ck span{flex:none;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:700;font-size:12px}
+.ck.pass span{background:#16a34a}.ck.warn span{background:#f59e0b}.ck.fail span{background:#dc2626}
+.ck b{display:block}.ck small{color:var(--mu);font-size:12.5px;line-height:1.5}
+.kws{display:flex;flex-wrap:wrap;gap:6px}
+.kw{padding:4px 10px;border-radius:99px;font-size:12px;font-weight:500}
+.kw.ok{background:#dcfce7;color:#166534}.kw.no{background:#ffedd5;color:#9a3412}
+.atn{margin-top:18px;font-size:12px;color:var(--mu);line-height:1.5}
+@media(max-width:900px){.atw{grid-template-columns:1fr;padding:14px}.cat{grid-template-columns:110px 1fr 48px}}
+.cta{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;width:100%;max-width:1020px;margin-top:2px}
+.ab{position:relative;display:flex;align-items:center;gap:14px;text-align:left;padding:13px 16px 13px 13px;border-radius:18px;border:1px solid rgba(147,180,248,.55);background:rgba(255,255,255,.74);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 10px 28px rgba(29,78,216,.12);transition:transform .2s,box-shadow .2s,border-color .2s;flex:1 1 250px;max-width:324px;color:var(--tx)}
+.ab:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(29,78,216,.22);border-color:var(--b)}
+.ab:focus-visible{outline:3px solid #93c5fd;outline-offset:2px}
+.ab .ci{flex:none;width:46px;height:46px;border-radius:14px;display:grid;place-items:center;color:#fff;background:linear-gradient(135deg,#0ea5e9,#2563eb);box-shadow:0 6px 14px rgba(37,99,235,.3)}
+.ab .ci svg{width:24px;height:24px}
+.ab.pp .ci{background:linear-gradient(135deg,#14b8a6,#0ea5e9)}
+.ab.at .ci{background:linear-gradient(135deg,#8b5cf6,#6366f1)}
+.ab .tx b{display:block;font-size:15.5px;line-height:1.25;white-space:nowrap}
+.ab .tx small{display:block;margin-top:3px;font-size:12px;color:var(--mu)}
+.ab .ar{margin-left:auto;flex:none;width:30px;height:30px;border-radius:50%;background:var(--bl);color:var(--b);display:grid;place-items:center;transition:.2s}
+.ab .ar svg{width:16px;height:16px}
+.ab:hover .ar{background:var(--b);color:#fff;transform:translateX(3px)}
+.ab.main{background:linear-gradient(135deg,#1d4ed8,#2563eb);border-color:transparent;color:#fff;box-shadow:0 16px 36px rgba(29,78,216,.38);overflow:hidden}
+.ab.main .tx small{color:#dbeafe}
+.ab.main .ci{background:#fff;color:var(--b);box-shadow:none}
+.ab.main .ar{background:rgba(255,255,255,.22);color:#fff}
+.ab.main:hover{border-color:transparent}
+.ab.main::after{content:'';position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.38),transparent);transform:skewX(-20deg);animation:shine 4.5s ease-in-out infinite}
+@keyframes shine{0%,55%{left:-60%}100%{left:140%}}
+.ab.sm{display:inline-flex;flex:none;max-width:none;padding:10px 14px 10px 10px;gap:10px}
+.ab.sm .ci{width:36px;height:36px;border-radius:11px}
+.ab.sm .ci svg{width:19px;height:19px}
+@media(prefers-reduced-motion:reduce){.ab.main::after{animation:none}}
+@media(max-width:700px){.ab{flex:1 1 100%;max-width:360px}.ab.sm{flex:none}}
+.atld{display:grid;place-items:center;align-content:center;gap:16px;min-height:320px;text-align:center}
+.spin{width:64px;height:64px;border-radius:50%;border:6px solid #dbeafe;border-top-color:var(--b);animation:rot 1s linear infinite}
+@keyframes rot{to{transform:rotate(360deg)}}
+.pbar{width:min(320px,80%);height:8px;border-radius:6px;background:#e2e8f0;overflow:hidden}
+.pbar u{display:block;width:0;height:100%;border-radius:6px;background:linear-gradient(90deg,#1d4ed8,#60a5fa)}
+.atld small{color:var(--mu)}
+.tdd{position:relative}
+.tdd>button{display:inline-flex;align-items:center;gap:5px}
+.chv{width:14px;height:14px;transition:transform .2s}
+.tdd:hover .chv,.tdd.open .chv{transform:rotate(180deg)}
+.tmenu{display:none;position:absolute;left:50%;top:calc(100% - 2px);transform:translateX(-50%);padding-top:10px;z-index:40}
+.tdd:hover .tmenu,.tdd.open .tmenu{display:block}
+.tmc{width:290px;background:#fff;border:1px solid var(--bd);border-radius:16px;padding:8px;box-shadow:0 18px 44px rgba(15,23,42,.18);display:flex;flex-direction:column;gap:2px}
+.tlinks .tmc button{display:flex;align-items:center;gap:12px;width:100%;text-align:left;padding:10px 12px;border-radius:12px;background:none;font-weight:500}
+.tlinks .tmc button:hover{background:var(--bl);color:var(--tx)}
+.tmc .ti{flex:none;width:38px;height:38px;border-radius:11px;display:grid;place-items:center;color:#fff;background:linear-gradient(135deg,#14b8a6,#0ea5e9)}
+.tmc .ti.at{background:linear-gradient(135deg,#8b5cf6,#6366f1)}
+.tmc .ti svg{width:20px;height:20px}
+.tmc .tt b{display:block;font-size:14px;color:var(--tx)}
+.tmc .tt small{display:block;margin-top:2px;font-size:12px;color:var(--mu);font-weight:400}
+.atsx{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center;text-align:left;max-width:980px;margin:0 auto}
+.atl2{list-style:none;margin:0 0 24px;padding:0;display:flex;flex-direction:column;gap:14px}
+.atl2 li{display:flex;gap:12px;align-items:flex-start;font-size:15px;line-height:1.5}
+.atl2 i{flex:none;width:24px;height:24px;border-radius:50%;background:#dcfce7;color:#16a34a;font-style:normal;font-weight:700;font-size:13px;display:grid;place-items:center;margin-top:1px}
+.atsl .atn{margin-top:14px}
+.atm{position:relative;background:#fff;border:1px solid #dbe7fb;border-radius:18px;padding:22px;box-shadow:0 18px 44px rgba(29,78,216,.14)}
+.atm .smp{position:absolute;top:12px;right:14px;font-size:11px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--b);background:var(--bl);border-radius:99px;padding:3px 10px}
+.atm .ath{margin-bottom:10px}
+.atm .ring{width:104px;height:104px}
+.atm .ath h3{font-size:19px}
+@media(max-width:800px){.atsx{grid-template-columns:1fr}}
+#splash{position:fixed;inset:0;z-index:1000;display:grid;place-items:center;background:radial-gradient(700px 420px at 12% 8%,rgba(96,165,250,.38),transparent 70%),radial-gradient(640px 420px at 92% 22%,rgba(56,189,248,.3),transparent 70%),linear-gradient(180deg,#e6efff,#fff);transition:opacity .6s ease,transform .6s ease,visibility .6s;cursor:pointer}
+#splash.out{opacity:0;visibility:hidden;transform:scale(1.04)}
+.sp-in{text-align:center;padding:20px}
+.sp-logo{position:relative;width:124px;height:124px;margin:0 auto 22px}
+.sp-logo svg{position:relative;width:124px;height:124px;display:block;filter:drop-shadow(0 16px 30px rgba(29,78,216,.35));animation:spPop .8s cubic-bezier(.2,1.4,.4,1) both}
+.rip{position:absolute;inset:0;border-radius:30px;border:2px solid rgba(29,78,216,.4);opacity:0;animation:spRip 1.8s ease-out .5s infinite}
+.rip.r2{animation-delay:1.1s}
+.dc{opacity:0;animation:spUp .4s ease .35s forwards}
+.ck-p{stroke-dasharray:22;stroke-dashoffset:22;animation:spDraw .6s ease .7s forwards}
+.sp-t{margin:0;font-size:clamp(32px,7vw,56px);letter-spacing:-.02em;font-weight:700;display:flex;gap:0;justify-content:center;flex-wrap:wrap}
+.sp-t span,.sp-t em{opacity:0;transform:translateY(16px);animation:spUp .7s ease forwards}
+.sp-t span{animation-delay:.9s}
+.sp-t em{font-style:normal;animation-delay:1.1s;background:linear-gradient(90deg,#1d4ed8,#38bdf8);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sp-s{margin:12px 0 0;color:var(--mu);font-size:clamp(14px,2.4vw,18px);opacity:0;transform:translateY(10px);animation:spUp .7s ease 1.5s forwards}
+.sp-bar{width:min(240px,60vw);height:4px;border-radius:4px;background:#dbeafe;margin:26px auto 0;overflow:hidden;opacity:0;animation:spUp .4s ease 1.4s forwards}
+.sp-bar u{display:block;height:100%;width:0;border-radius:4px;background:linear-gradient(90deg,#1d4ed8,#60a5fa);animation:spBar 1.3s ease-in-out 1.4s forwards}
+@keyframes spPop{0%{transform:scale(.4) rotate(-12deg);opacity:0}100%{transform:none;opacity:1}}
+@keyframes spRip{0%{transform:scale(1);opacity:.7}100%{transform:scale(1.9);opacity:0}}
+@keyframes spDraw{to{stroke-dashoffset:0}}
+@keyframes spUp{to{opacity:1;transform:none}}
+@keyframes spBar{to{width:100%}}
+html.spl{overflow:hidden}
+@media(prefers-reduced-motion:reduce){.sp-logo svg,.rip,.dc,.ck-p,.sp-t span,.sp-t em,.sp-s,.sp-bar,.sp-bar u{animation:none!important}.rip{display:none}.dc,.sp-t span,.sp-t em,.sp-s,.sp-bar{opacity:1;transform:none}.ck-p{stroke-dashoffset:0}.sp-bar u{width:100%}}
+.skip{position:absolute;left:12px;top:-60px;z-index:2000;background:#fff;color:var(--b);padding:10px 16px;border-radius:10px;font-weight:700;box-shadow:0 6px 20px rgba(0,0,0,.25);text-decoration:none}
+.skip:focus{top:12px}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+:focus-visible{outline:3px solid #2563eb;outline-offset:2px}
+input:focus-visible,textarea:focus-visible,select:focus-visible{outline:2px solid #2563eb}
+main>*,#pv,#stage,.ppw>*,.atw>*{min-width:0}
+#toast.err{background:#991b1b}
+#toast{max-width:min(92vw,520px);text-align:center}
+.dlg{position:fixed;inset:0;background:rgba(15,23,42,.55);display:none;place-items:center;z-index:900;padding:16px}
+.dlg.on{display:grid}
+.dlg .bx2{background:#fff;border-radius:16px;padding:22px;max-width:520px;width:100%;max-height:88vh;overflow:auto;display:flex;flex-direction:column;gap:12px;box-shadow:0 20px 60px rgba(0,0,0,.3)}
+.dlg h2{margin:0;font-size:20px}
+.dlg p,.dlg li{font-size:14px;line-height:1.6;color:var(--mu);margin:0}
+.dlg ul{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:6px}
+.dlg .row2{display:flex;gap:10px;justify-content:flex-end;flex-wrap:wrap}
+.btn.danger{border-color:#fecaca;color:#991b1b}
+.btn.danger:hover{border-color:#dc2626;background:#fef2f2}
+.rec2{font-style:normal;font-size:10px;font-weight:700;color:var(--b);background:var(--bl);border-radius:99px;padding:2px 8px}
+.cvx .ci a{color:inherit}
+#printroot{display:none}
+@media print{
+ @page{size:A4;margin:0}
+ html,body{background:#fff!important;overflow:visible!important}
+ body.printing>*:not(#printroot){display:none!important}
+ body.printing #printroot{display:block}
+ #printroot .pg{display:block;width:794px;height:1122px;margin:0;box-shadow:none;border-radius:0;overflow:hidden;break-after:page;page-break-after:always;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+ #printroot .pg:last-child{break-after:auto;page-break-after:auto}
+ #printroot a{text-decoration:none}
+}
+.est{background:#fff7ed;border:1px solid #fed7aa;color:#7c2d12;border-radius:12px;padding:10px 14px;font-size:13px;line-height:1.5;margin-bottom:16px}
+.fx{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:10px;font-size:14px}
+.fx li b{color:#15803d;margin-right:6px}
+.fx li small{display:block;color:var(--mu);font-size:12.5px;line-height:1.5;margin-top:2px}
+.how{margin-top:18px;border:1px solid var(--bd);border-radius:12px;padding:0 14px;background:#f8fafc}
+.how summary{cursor:pointer;font-weight:600;font-size:14px;padding:12px 0}
+.how p,.how li{font-size:13px;line-height:1.6;color:var(--mu)}
+.how ul{padding-left:18px;margin:6px 0 10px}
+.kw.ok{background:#dcfce7;color:#14532d}.kw.no{background:#ffedd5;color:#7c2d12}
+.lnk{border:0;background:none;color:var(--b);font-weight:600;text-decoration:underline;font-size:inherit;padding:2px 4px;cursor:pointer}
+.lfl{margin:0 0 6px}
+.aut{margin:0 0 4px;padding:8px 12px;background:#f0f9ff;border:1px solid #bae6fd;border-radius:10px;color:#075985}
+.tpr{display:flex;gap:10px;overflow-x:auto;padding:4px 2px 8px;max-width:100%;scrollbar-width:thin}
+.tpc{flex:none;width:114px;border:2px solid var(--bd);background:#fff;border-radius:12px;padding:6px;text-align:center;color:var(--tx)}
+.tpc:hover{border-color:#93b4f8}
+.tpc.on{border-color:var(--b);box-shadow:0 0 0 3px rgba(37,99,235,.2)}
+.tph{display:block;width:100px;height:141px;position:relative;overflow:hidden;border-radius:6px;background:#fff;border:1px solid #e2e8f0}
+.tph .cvx{position:absolute;left:0;top:0;transform-origin:0 0;pointer-events:none;height:1123px}
+.tpn{display:block;font-size:12px;font-weight:600;margin-top:6px}
+#bar .bg:first-child{align-items:flex-start}
+@media(max-width:900px){
+ .mv button{width:36px;height:34px;font-size:12px}
+ .ch2,.sw{min-height:34px}
+ .sw{width:30px;height:30px}
+ .btn{min-height:40px}
+ #bar{padding:10px}
+ .tnav .tcta{min-height:38px}
+ .dlg .bx2{padding:18px}
+}
+#pgm{position:absolute;inset:0;pointer-events:none}
+#pgm i{position:absolute;left:0;right:0;border-top:2px dashed #60a5fa}
+#pgm b{position:absolute;right:6px;top:2px;font:600 10px system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans Bengali","Helvetica Neue",Arial,sans-serif;color:#1d4ed8;background:#eff6ff;border-radius:6px;padding:1px 6px}
+.cvx .ci{display:flex;gap:8px;align-items:flex-start}
+.cvx .ci i{flex:none;width:14px;height:14px;margin-top:4px}
+.cvx .ci svg{display:block}
+footer{text-align:center;padding:18px 16px calc(26px + env(safe-area-inset-bottom,0px));color:var(--mu);font-size:13px}
+footer b{color:var(--b);font-weight:600}
+.cvx a{color:var(--c);text-decoration:none;word-break:break-all}
+.cvx .sb a{color:#fff}
+.cvx.light .sb a{color:var(--c)}
+@media(max-width:900px){
+main{grid-template-columns:1fr;padding:14px}
+.tabs{display:flex;gap:6px;padding:10px 14px 0;max-width:1280px;margin:0 auto}
+.tabs button{flex:1;border:1px solid var(--bd);background:#fff;border-radius:10px;padding:9px;font-weight:600;font-size:13px;color:var(--mu)}
+.tabs button.on{background:var(--b);color:#fff;border-color:var(--b)}
+body:not(.ed) #form{display:none}
+body.ed #pv{position:fixed;left:-10000px;top:0;width:calc(100vw - 28px);pointer-events:none}
+.hide-s{display:none}
+}
+</style>
+</head>
+<body class="ed">
+<a class="skip" href="#main">Skip to main content</a>
+<noscript><p style="padding:24px;font:16px system-ui">EasyCV needs JavaScript to run. Please enable JavaScript in your browser to use the CV builder, passport photo maker and ATS resume checker.</p></noscript>
+<div id="splash" aria-hidden="true"><div class="sp-in"><div class="sp-logo"><span class="rip"></span><span class="rip r2"></span><svg viewBox="0 0 34 34" aria-hidden="true"><rect width="34" height="34" rx="9" fill="#1d4ed8"/><path class="dc" d="M10 7h10l5 5v15a1 1 0 0 1-1 1H10a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1z" fill="#fff"/><path class="dc" d="M20 7v5h5" fill="#bfdbfe"/><path class="ck-p" d="M13 20.5l3 3 5.5-6.5" fill="none" stroke="#1d4ed8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h1 class="sp-t" aria-label="EasyCV"><span>Easy</span><em>CV</em></h1><p class="sp-s">Your story. Your CV. Ready in minutes.</p><div class="sp-bar"><u></u></div></div></div>
+<section id="land">
+  <nav class="tnav" aria-label="Main navigation"><div class="tl" data-home="1"><svg width="32" height="32" viewBox="0 0 34 34" aria-hidden="true"><rect width="34" height="34" rx="9" fill="#1d4ed8"/><path d="M10 7h10l5 5v15a1 1 0 0 1-1 1H10a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1z" fill="#fff"/><path d="M20 7v5h5" fill="#bfdbfe"/><path d="M13 20.5l3 3 5.5-6.5" fill="none" stroke="#1d4ed8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><div>Easy<span>CV</span></div></div><div class="tlinks"><button data-goto="tpls">CV Templates</button><div class="tdd"><button data-feat="1" aria-haspopup="true" aria-expanded="false">Features <svg class="chv" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+   <div class="tmenu"><div class="tmc"><button data-pp="1"><span class="ti pp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h3l2-3h6l2 3h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.5"/></svg></span><span class="tt"><b>Passport Photo Maker</b><small>Crop, remove background, add colour</small></span></button><button data-ats="1"><span class="ti at"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 20V11M12 20V4M19 20v-6"/></svg></span><span class="tt"><b>ATS Resume Checker</b><small>See how ATS-friendly your CV is</small></span></button></div></div></div><button data-goto="why">Why us</button><button data-goto="faq">FAQ</button></div><button class="tcta" data-start="1">Create Your CV</button></nav>
+  <div class="lw" role="main" id="main" tabindex="-1">
+    <div class="lh"><svg width="68" height="68" viewBox="0 0 34 34" aria-hidden="true"><rect width="34" height="34" rx="9" fill="#1d4ed8"/><path d="M10 7h10l5 5v15a1 1 0 0 1-1 1H10a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1z" fill="#fff"/><path d="M20 7v5h5" fill="#bfdbfe"/><path d="M13 20.5l3 3 5.5-6.5" fill="none" stroke="#1d4ed8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><h1>Easy<span>CV</span></h1></div>
+    <p class="sl1">Your story. Your CV. Ready in minutes.</p>
+    <p class="sl2">Three free tools in one place: build a professional CV, make a passport photo, and check your resume with an ATS estimate. No sign-up needed.</p>
+    <div class="cta">
+     <button class="ab main" data-start="1"><span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="m9 15 2 2 4-4"/></svg></span><span class="tx"><b>Create Your CV</b><small>Free · No sign-up</small></span><span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></button>
+     <button class="ab pp" data-pp="1"><span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h3l2-3h6l2 3h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.5"/></svg></span><span class="tx"><b>Passport Photo Maker</b><small>Crop · Remove background</small></span><span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></button>
+     <button class="ab at" data-ats="1"><span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 20V11M12 20V4M19 20v-6"/></svg></span><span class="tx"><b>ATS Resume Checker</b><small>Check your CV score</small></span><span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></button>
+    </div>
+    <div class="hvw" aria-hidden="true"><div class="hv">
+      <div class="arc a1"></div><div class="arc a2"></div>
+      <div class="rc"><b class="rn">Your Name Here</b><span class="rt">Marketing Executive</span>
+       <i class="ln" style="width:70%"></i><i class="ln" style="width:92%"></i><i class="ln" style="width:80%"></i>
+       <b class="rh">Work Experience</b><u class="rj">Job Title Here</u><span class="rs">Company Name, City</span><i class="ln" style="width:88%"></i><i class="ln" style="width:60%"></i>
+       <b class="rh">Education</b><u class="rj">Degree Name Here</u><span class="rs">University / Institution</span><i class="ln" style="width:75%"></i></div>
+      <div class="av"><svg viewBox="0 0 100 100"><defs><linearGradient id="avg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#60a5fa"/><stop offset="1" stop-color="#1d4ed8"/></linearGradient></defs><rect width="100" height="100" fill="url(#avg)"/><path d="M12 100c2-25 19-35 38-35s36 10 38 35z" fill="#f9a8d4"/><rect x="43" y="56" width="14" height="14" rx="5" fill="#eab08c"/><circle cx="50" cy="42" r="19" fill="#f5c6a5"/><path d="M30 44c-2-18 8-27 21-27s23 9 19 27c-3-9-9-14-20-14s-17 5-20 14z" fill="#5b3a29"/><circle cx="43" cy="44" r="2" fill="#3b2a20"/><circle cx="57" cy="44" r="2" fill="#3b2a20"/><path d="M44 52q6 5 12 0" stroke="#b45309" stroke-width="2" fill="none" stroke-linecap="round"/></svg></div>
+      <div class="fb f1"><em>6</em><div><b>Templates</b><span>Europass style too</span></div></div>
+      <div class="fb f2">✓ Europass style</div>
+      <div class="fb f3"><b>Skills</b><span class="sk">Communication</span><span class="sk">Teamwork</span><span class="sk">Leadership</span></div>
+      <div class="fb f4">＋ Add skill</div>
+      <div class="fb f5"><i>⬇</i><span>Download PDF · Word · JPEG · PNG</span></div>
+    </div></div>
+  </div>
+  <div class="lsecs">
+  <div class="sec"><h2>How it works</h2><p class="sub">Three free tools. One simple workspace.</p>
+   <h3>Create your CV</h3><div class="steps"><div class="stp"><span class="sn">1</span><svg viewBox="0 0 120 90" aria-hidden="true"><rect width="120" height="90" rx="12" fill="#eaf2ff"/><rect x="16" y="18" width="28" height="40" rx="3" fill="#fff" stroke="#bfdbfe"/><rect x="76" y="18" width="28" height="40" rx="3" fill="#fff" stroke="#bfdbfe"/><path d="M21 30h18M21 36h12M81 30h18M81 36h12" stroke="#e2e8f0" stroke-width="2"/><rect x="46" y="12" width="28" height="42" rx="3" fill="#fff" stroke="#1d4ed8" stroke-width="2"/><rect x="50" y="17" width="20" height="5" fill="#1d4ed8"/><path d="M50 29h20M50 34h16M50 39h18" stroke="#cbd5e1" stroke-width="2"/><circle cx="60" cy="68" r="10" fill="#16a34a"/><path d="M55 68l4 4 7-8" stroke="#fff" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><b>Choose a template</b><p>Pick from 6 designs, including Europass style.</p></div><div class="stp"><span class="sn">2</span><svg viewBox="0 0 120 90" aria-hidden="true"><rect width="120" height="90" rx="12" fill="#eaf2ff"/><rect x="24" y="10" width="60" height="68" rx="6" fill="#fff" stroke="#bfdbfe"/><circle cx="40" cy="26" r="7" fill="#93c5fd"/><path d="M52 23h24M52 29h16" stroke="#1d4ed8" stroke-width="3" stroke-linecap="round"/><path d="M32 46h44M32 54h44M32 62h28" stroke="#cbd5e1" stroke-width="3" stroke-linecap="round"/><path d="M80 72l16-16 6 6-16 16-8 2z" fill="#1d4ed8"/></svg><b>Fill in your details</b><p>Add your photo, experience, education and skills step by step.</p></div><div class="stp"><span class="sn">3</span><svg viewBox="0 0 120 90" aria-hidden="true"><rect width="120" height="90" rx="12" fill="#eaf2ff"/><rect x="14" y="14" width="92" height="62" rx="8" fill="#fff" stroke="#bfdbfe"/><circle cx="34" cy="32" r="8" fill="#1d4ed8"/><circle cx="56" cy="32" r="8" fill="#0ea5e9"/><circle cx="78" cy="32" r="8" fill="#7c3aed"/><circle cx="34" cy="32" r="11" fill="none" stroke="#1d4ed8" stroke-width="2"/><rect x="24" y="52" width="48" height="7" rx="3" fill="#dbeafe"/><rect x="24" y="62" width="34" height="7" rx="3" fill="#bfdbfe"/><path d="M90 66V48M84 54l6-6 6 6M90 48v18M84 60l6 6 6-6" stroke="#1d4ed8" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><b>Customise it</b><p>Change the colour and move sections up or down.</p></div><div class="stp"><span class="sn">4</span><svg viewBox="0 0 120 90" aria-hidden="true"><rect width="120" height="90" rx="12" fill="#eaf2ff"/><rect x="38" y="8" width="44" height="54" rx="5" fill="#fff" stroke="#bfdbfe"/><path d="M60 20v22M50 34l10 10 10-10" stroke="#1d4ed8" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><rect x="26" y="66" width="68" height="12" rx="6" fill="#1d4ed8"/><text x="60" y="75.5" font-size="8" font-weight="700" fill="#fff" text-anchor="middle" font-family="sans-serif">PDF · DOC · JPG</text></svg><b>Download</b><p>Save as PDF, Word, JPEG or PNG.</p></div></div><button class="ab main sm" data-start="1"><span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="m9 15 2 2 4-4"/></svg></span><span class="tx"><b>Create Your CV</b></span><span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></button>
+   <h3 class="gap">Make a passport photo</h3><div class="steps"><div class="stp"><span class="sn">1</span><svg viewBox="0 0 120 90" aria-hidden="true"><rect width="120" height="90" rx="12" fill="#eaf2ff"/><rect x="26" y="12" width="68" height="50" rx="6" fill="#fff" stroke="#bfdbfe"/><circle cx="46" cy="28" r="6" fill="#fbbf24"/><path d="M30 58l20-22 14 14 9-9 17 17z" fill="#93c5fd"/><circle cx="88" cy="62" r="15" fill="#1d4ed8"/><path d="M88 70V54M81 60l7-7 7 7" stroke="#fff" stroke-width="3.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><b>Upload a photo</b><p>Drag &amp; drop or choose any normal photo.</p></div><div class="stp"><span class="sn">2</span><svg viewBox="0 0 120 90" aria-hidden="true"><rect width="120" height="90" rx="12" fill="#eaf2ff"/><rect x="34" y="12" width="52" height="66" fill="#bfdbfe"/><circle cx="60" cy="38" r="12" fill="#e0ac8a"/><path d="M38 78a22 20 0 0 1 44 0z" fill="#3a4f6e"/><path d="M26 28V12h16M94 28V12H78M26 62v16h16M94 62v16H78" stroke="#1d4ed8" stroke-width="4" fill="none" stroke-linecap="round"/></svg><b>Crop to size</b><p>Pick 35 × 45 mm or another size and fit your face.</p></div><div class="stp"><span class="sn">3</span><svg viewBox="0 0 120 90" aria-hidden="true"><rect width="120" height="90" rx="12" fill="#eaf2ff"/><rect x="24" y="12" width="72" height="66" rx="6" fill="#5aa9e6"/><path d="M24 12h36v66H24z" fill="#e2e8f0"/><path d="M24 12h9v9h-9zM42 12h9v9h-9zM33 21h9v9h-9zM51 21h9v9h-9zM24 30h9v9h-9zM42 30h9v9h-9z" fill="#fff"/><circle cx="60" cy="38" r="11" fill="#e0ac8a"/><path d="M38 78a22 20 0 0 1 44 0z" fill="#3a4f6e"/><path d="M92 14l2 5 5 2-5 2-2 5-2-5-5-2 5-2z" fill="#fff"/></svg><b>Remove background</b><p>Auto subject, then add a solid colour you like.</p></div><div class="stp"><span class="sn">4</span><svg viewBox="0 0 120 90" aria-hidden="true"><rect width="120" height="90" rx="12" fill="#eaf2ff"/><rect x="32" y="10" width="46" height="58" rx="4" fill="#fff" stroke="#bfdbfe"/><circle cx="55" cy="32" r="9" fill="#e0ac8a"/><path d="M38 66a17 15 0 0 1 34 0z" fill="#3a4f6e"/><circle cx="84" cy="62" r="15" fill="#1d4ed8"/><path d="M84 54v13M78 62l6 6 6-6" stroke="#fff" stroke-width="3.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><rect x="22" y="72" width="30" height="10" rx="5" fill="#dbeafe"/><text x="37" y="79.5" font-size="7" font-weight="700" fill="#1d4ed8" text-anchor="middle" font-family="sans-serif">JPG · PNG</text></svg><b>Download</b><p>Get a 300 DPI JPEG or PNG.</p></div></div><button class="ab pp sm" data-pp="1"><span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h3l2-3h6l2 3h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.5"/></svg></span><span class="tx"><b>Passport Photo Maker</b></span><span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></button><h3 class="gap">Check your resume for ATS</h3><div class="steps"><div class="stp"><span class="sn">1</span><svg viewBox="0 0 120 90" aria-hidden="true"><rect width="120" height="90" rx="12" fill="#eaf2ff"/><rect x="34" y="10" width="46" height="58" rx="4" fill="#fff" stroke="#bfdbfe"/><path d="M42 24h30M42 32h30M42 40h20" stroke="#cbd5e1" stroke-width="3" stroke-linecap="round"/><circle cx="84" cy="62" r="15" fill="#6366f1"/><path d="M84 70V54M77 60l7-7 7 7" stroke="#fff" stroke-width="3.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><b>Upload your CV</b><p>PDF, Word or text. It is read on your device.</p></div><div class="stp"><span class="sn">2</span><svg viewBox="0 0 120 90" aria-hidden="true"><rect width="120" height="90" rx="12" fill="#eaf2ff"/><rect x="30" y="14" width="52" height="62" rx="5" fill="#fff" stroke="#bfdbfe"/><rect x="46" y="9" width="20" height="9" rx="3" fill="#6366f1"/><path d="M38 32h36M38 40h36M38 48h24" stroke="#cbd5e1" stroke-width="3" stroke-linecap="round"/><rect x="60" y="58" width="48" height="16" rx="8" fill="#ede9fe"/><text x="84" y="69.5" font-size="8" font-weight="700" fill="#6d28d9" text-anchor="middle" font-family="sans-serif">OPTIONAL</text></svg><b>Add a job post</b><p>Optional: paste a job description to check keywords.</p></div><div class="stp"><span class="sn">3</span><svg viewBox="0 0 120 90" aria-hidden="true"><rect width="120" height="90" rx="12" fill="#eaf2ff"/><circle cx="60" cy="42" r="26" fill="#fff" stroke="#e2e8f0" stroke-width="7"/><circle cx="60" cy="42" r="26" fill="none" stroke="#16a34a" stroke-width="7" stroke-linecap="round" stroke-dasharray="134 164" transform="rotate(-90 60 42)"/><text x="60" y="48" font-size="18" font-weight="700" fill="#0f172a" text-anchor="middle" font-family="sans-serif">82</text><rect x="34" y="74" width="52" height="8" rx="4" fill="#dbeafe"/></svg><b>Get your estimated score</b><p>See a score out of 100 and what it means.</p></div><div class="stp"><span class="sn">4</span><svg viewBox="0 0 120 90" aria-hidden="true"><rect width="120" height="90" rx="12" fill="#eaf2ff"/><rect x="20" y="12" width="64" height="58" rx="6" fill="#fff" stroke="#bfdbfe"/><circle cx="33" cy="28" r="6" fill="#16a34a"/><path d="M30 28l2.2 2.2 4-4.4" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M45 28h30" stroke="#cbd5e1" stroke-width="3" stroke-linecap="round"/><circle cx="33" cy="46" r="6" fill="#f59e0b"/><path d="M33 43v4.5M33 49.5v.5" stroke="#fff" stroke-width="2" stroke-linecap="round"/><path d="M45 46h24" stroke="#cbd5e1" stroke-width="3" stroke-linecap="round"/><path d="M45 58h18" stroke="#cbd5e1" stroke-width="3" stroke-linecap="round"/><path d="M98 56a13 13 0 1 1-4-9.5M96 40v8h-8" stroke="#6366f1" stroke-width="3.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><b>Fix and check again</b><p>Follow the top fixes, then re-check.</p></div></div><button class="ab at sm" data-ats="1"><span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 20V11M12 20V4M19 20v-6"/></svg></span><span class="tx"><b>ATS Resume Checker</b></span><span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></button></div>
+  <div class="sec" id="tpls"><h2>Choose your professional CV template</h2><p class="sub">Click any template to start building with it.</p>
+   <div class="car2"><button class="nv" data-slide="-1" aria-label="Previous">‹</button><div class="track" id="tpltrack"></div><button class="nv" data-slide="1" aria-label="Next">›</button></div></div>
+  <div class="sec" id="atssec"><h2>ATS Resume Checker</h2><p class="sub">Find out how ATS-friendly your CV is before you apply.</p>
+   <div class="atsx">
+    <div class="atsl"><ul class="atl2"><li><i>✓</i><span>Upload your CV as PDF, Word (.docx) or plain text</span></li><li><i>✓</i><span>Checks contact details, sections, length, bullet points and numbers</span></li><li><i>✓</i><span>Optional job description match to find missing keywords</span></li><li><i>✓</i><span>Clear, simple tips to fix each problem</span></li></ul>
+     <button class="ab at sm" data-ats="1"><span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 20V11M12 20V4M19 20v-6"/></svg></span><span class="tx"><b>Check your CV score</b></span><span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></button>
+     <p class="atn">The score is an estimate based on common ATS rules. Every company uses a different ATS.</p></div>
+    <div class="atm" aria-hidden="true"><span class="smp">Sample result</span>
+     <div class="ath"><svg class="ring" viewBox="0 0 120 120"><circle cx="60" cy="60" r="52" fill="none" stroke="#e2e8f0" stroke-width="10"/><circle cx="60" cy="60" r="52" fill="none" stroke="#16a34a" stroke-width="10" stroke-linecap="round" stroke-dasharray="267.9 326.7" transform="rotate(-90 60 60)"/><text x="60" y="68" text-anchor="middle" font-size="32" font-weight="700" fill="#0f172a">82</text></svg><div><h3 style="color:#16a34a">Good</h3><p>Estimated ATS-readiness score out of 100.</p></div></div>
+     <div class="cat"><span>Readable text</span><i><u style="width:100%"></u></i><em>15/15</em></div>
+     <div class="cat"><span>Contact details</span><i><u style="width:100%"></u></i><em>15/15</em></div>
+     <div class="cat"><span>Standard sections</span><i><u style="width:92%"></u></i><em>23/25</em></div>
+     <div class="cat"><span>Measurable results</span><i><u style="width:50%"></u></i><em>5/10</em></div>
+     <div class="ck pass"><span>✓</span><div><b>Email found</b></div></div>
+     <div class="ck warn"><span>!</span><div><b>Few measurable results</b><small>Add numbers, such as "increased sales by 20%".</small></div></div></div>
+   </div></div>
+  <div class="sec" id="why"><h2>Reasons to Create Your CV with us</h2><p class="sub">Everything you need to apply with confidence, in one place.</p><div class="whys"><div class="why"><span>🆓</span><b>Free, no sign-up</b><p>Open the page and start. No account and no email needed.</p></div><div class="why"><span>🔒</span><b>Private by design</b><p>Your CV, photos and resume text are processed on your own device. This website does not upload them to a server.</p></div><div class="why"><span>🎨</span><b>6 professional templates</b><p>Including Europass style designs, in any colour you like.</p></div><div class="why"><span>↕️</span><b>Move sections your way</b><p>Reorder any section up or down with one click.</p></div><div class="why"><span>📄</span><b>Clean page breaks</b><p>Lines and sections are not cut in half between pages.</p></div><div class="why"><span>⬇️</span><b>PDF, Word, JPEG and PNG</b><p>The PDF keeps clickable links and a hidden text layer.</p></div><div class="why"><span>📷</span><b>Passport photo maker</b><p>Crop, remove the background, add a solid colour and print a sheet of photos.</p></div><div class="why"><span>📊</span><b>ATS resume checker</b><p>An estimated score with keyword matching and clear tips. Not an employer result.</p></div></div></div>
+  <div class="sec" id="faq"><h2>Frequently asked questions</h2><p class="sub">Quick answers before you start.</p><div class="fqs"><details class="fq"><summary>Is EasyCV free?</summary><p>Yes. You can use all three tools without paying and without creating an account.</p></details><details class="fq"><summary>Do you save or upload my information?</summary><p>This website does not upload your CV, photos or resume text to a server. Everything is processed in your browser. If auto-save is on, your CV form (including a photo or signature you added) is kept in this browser on this device only, so you can continue later. You can turn auto-save off or delete saved data at any time using the "Privacy &amp; saved data" link. Helper libraries for PDF, Word and ZIP files are downloaded from public CDNs (jsDelivr or cdnjs) the first time you use those features, and the hosting service may keep normal server logs.</p></details><details class="fq"><summary>Which formats can I download?</summary><p>CVs: PDF (recommended), Print / Save as PDF (sharpest text), Word (.docx), JPEG and PNG. Long CVs are exported page by page, and image exports of several pages come as one ZIP file. Passport photos: JPEG and PNG at 300 DPI, plus a print sheet as PDF, JPEG or PNG.</p></details><details class="fq"><summary>Is the text in the PDF selectable and readable by ATS?</summary><p>The PDF download looks exactly like the preview and includes a hidden text layer and clickable links, so search and most ATS can read it. That hidden layer covers Latin letters and numbers only. Text in other scripts, such as Bangla, is visible in the PDF but may not be searchable. For fully selectable text in any script, use "Print / Save as PDF" or the Word file. You can test any file with the ATS Resume Checker.</p></details><details class="fq"><summary>Can I make a Europass style CV?</summary><p>Yes. Two of the templates, Europass and Europass Band, follow the Europass style. You can change their colour too.</p></details><details class="fq"><summary>Is the ATS score real?</summary><p>No. It is an estimate based on common ATS rules: readable text, clear sections, contact details, bullet points, measurable results and keywords. Every company uses a different ATS and most do not show candidates a score, so no tool can promise an exact result. Use it as a guide to improve your CV.</p></details><details class="fq"><summary>How does the passport photo background remover work?</summary><p>Auto subject looks at the colours and the position of the person in the photo, so it works best with a plain background. It is not an AI model. You can fix any spots with the Erase and Restore brushes, and use Spot heal for small marks. Check the size rules of the office you are applying to before you print.</p></details><details class="fq"><summary>Can I use it on my phone?</summary><p>Yes. It works on phones, tablets and laptops. A few extras, like the close-up preview for Spot heal, are shown on larger screens.</p></details><details class="fq"><summary>What happens when my CV is longer than one page?</summary><p>Pages are split automatically, and lines or sections are not cut in half. The preview shows each page separately.</p></details></div></div>
+ </div>
+ <footer class="lf"><p class="lfl"><button class="lnk" data-privacy="1">Privacy &amp; saved data</button></p>Developed by: <b>Rayhan Hossain Mridha</b></footer>
+</section>
+<section id="pp">
+ <header><div class="logo" data-home="1" title="Home" style="cursor:pointer"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><rect width="34" height="34" rx="9" fill="#1d4ed8"/><path d="M10 7h10l5 5v15a1 1 0 0 1-1 1H10a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1z" fill="#fff"/><path d="M20 7v5h5" fill="#bfdbfe"/><path d="M13 20.5l3 3 5.5-6.5" fill="none" stroke="#1d4ed8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><div>Easy<span>CV</span></div></div><div class="sp"></div><button class="btn" data-home="1">← Home</button></header>
+ <div class="ppw" role="main" tabindex="-1">
+  <div class="ppp">
+   <h2>Passport Photo Maker</h2>
+   <p class="hint">Upload a normal photo, crop it to passport size, remove the background and add a solid colour.</p>
+   <label class="fl">📷 Upload photo<input type="file" id="ppf" accept="image/*"></label>
+   <label>Photo size<select id="pps"></select></label>
+   <button class="fl" data-ppcrop="1">✂ Crop / reposition</button>
+   <b class="t">Background remover</b>
+   <div class="pa"><button class="ch2 on" data-ppmeth="auto">✨ Auto subject</button><button class="ch2" data-ppmeth="colour">Plain background</button></div>
+   <label class="chk"><input type="checkbox" id="ppr" checked> Remove background</label>
+   <label id="ppsens" style="display:none">Sensitivity<input type="range" id="ppt" min="10" max="120" value="38"></label>
+   <p class="hint" id="pph"></p>
+   <b class="t">Brush tools</b>
+   <div class="pa"><button class="ch2" data-ppm="move">✋ Move</button><button class="ch2" data-ppm="erase">Erase</button><button class="ch2" data-ppm="restore">Restore</button><button class="ch2" data-ppm="pick">Pick background colour</button><button class="ch2" data-ppundo="1">↶ Undo</button></div>
+   <label><span>Brush size: <b id="ppbv">20</b> px</span><input type="range" id="ppb" min="3" max="60" value="20"></label>
+   <p class="hint">Mouse wheel or + / − to zoom. With ✋ Move selected, drag the photo to move it (hold Space to move while a brush is on).</p>
+   <div id="ppanch"></div>
+   <b class="t">Background colour</b>
+   <div class="pa"><button class="sw on" style="background:#ffffff" data-ppbg="#ffffff" aria-label="White" title="White"></button><button class="sw" style="background:#dbe9f9" data-ppbg="#dbe9f9" aria-label="Light blue" title="Light blue"></button><button class="sw" style="background:#5aa9e6" data-ppbg="#5aa9e6" aria-label="Sky blue" title="Sky blue"></button><button class="sw" style="background:#e2e8f0" data-ppbg="#e2e8f0" aria-label="Light grey" title="Light grey"></button><button class="sw" style="background:#c62828" data-ppbg="#c62828" aria-label="Red" title="Red"></button><label class="cu">Custom<input type="color" id="ppcc" value="#ffffff"></label></div>
+   <div class="pa"><button class="btn p" data-ppdl="jpg">Download JPEG</button><button class="btn" data-ppdl="png">Download PNG</button></div>
+   <span class="hint" id="ppi" aria-live="polite"></span>
+   <b class="t">Print sheet (many photos on one page)</b>
+   <label><span>Paper size</span><select id="pppaper"><option value="0">4 × 6 inch (photo paper)</option><option value="1">5 × 7 inch</option><option value="2">A4</option></select></label>
+   <label class="chk"><input type="checkbox" id="ppguides" checked> Draw thin cut guides</label>
+   <canvas id="ppsheet" aria-label="Preview of the print sheet" style="display:none;max-width:100%;border:1px solid var(--bd);border-radius:8px;align-self:center"></canvas>
+   <p class="hint" id="ppsinfo">Upload a photo to see the print sheet.</p>
+   <div class="pa"><button class="btn p" data-ppsheet="pdf">Download sheet (PDF)</button><button class="btn" data-ppsheet="jpg">JPEG</button><button class="btn" data-ppsheet="png">PNG</button></div>
+   <p class="hint">Tip: print the PDF at 100% ("Actual size", no "fit to page") so every photo keeps its real size.</p>
+  </div>
+  <div class="ppv"><button class="btn rmx" data-pprm="1">✕ Remove image</button>
+   <div id="ppe" class="dz"><div class="dzi">🖼️</div><b>Drag &amp; drop your photo here</b><span>or</span><label class="fl">Upload Image<input type="file" id="ppf2" accept="image/*"></label><small>JPG, PNG or WebP</small></div>
+   <div id="ppst"><div id="ppvw"><canvas id="ppc"></canvas></div></div>
+   <div class="vtb"><button data-ppz="out" title="Zoom out" aria-label="Zoom out">−</button><span id="ppzv">100%</span><button data-ppz="in" title="Zoom in" aria-label="Zoom in">+</button><button data-ppz="fit">Fit</button></div>
+  </div>
+  <div id="ppside">
+   <div class="pcard" id="ppadj"><div class="ph2"><b class="t">Adjustments</b><button class="ch2" data-adjtoggle="1">Show all ▾</button></div>
+    <p class="hint" id="ppadh">Edge shift, softness, brightness, contrast and sharpness.</p>
+    <div class="adjb" id="ppadb">
+     <label>Edge shift (shrink ← → grow)<input type="range" id="ppsh" min="-6" max="6" step="1" value="0"></label>
+     <label>Edge softness<input type="range" id="ppfe" min="0" max="6" step="1" value="1"></label>
+     <label>Brightness<input type="range" id="ppbr" min="-50" max="50" step="1" value="0"></label>
+     <label>Contrast<input type="range" id="ppco" min="-50" max="50" step="1" value="0"></label>
+     <label>Sharpness<input type="range" id="ppsp" min="0" max="100" step="1" value="0"></label>
+     <button class="fl" data-ppreset="1">Reset adjustments</button>
+    </div></div>
+   <div class="pcard" id="pphl"><b class="t">Spot heal</b>
+    <div class="pa"><button class="ch2" data-ppm="heal">🩹 Spot heal</button><button class="ch2" data-ppundo="1">↶ Undo</button></div>
+    <label><span>Brush size: <b id="pphbv">8</b> px</span><input type="range" id="pphb" min="2" max="30" value="8"></label>
+    <p class="hint">Click or drag over a pimple, mark or small spot on the face.</p>
+    <div class="lpw" id="pplw"><canvas id="pplp" width="240" height="240"></canvas><span>Turn on Spot heal and move over the photo to see a close-up here.</span></div>
+    <label><span>Close-up zoom: <b id="pplzv">4</b>×</span><input type="range" id="pplz" min="2" max="8" value="4"></label>
+   </div>
+  </div>
+ </div>
+ <footer>Developed by: <b>Rayhan Hossain Mridha</b></footer>
+</section>
+<section id="ats">
+ <header><div class="logo" data-home="1" title="Home" style="cursor:pointer"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><rect width="34" height="34" rx="9" fill="#1d4ed8"/><path d="M10 7h10l5 5v15a1 1 0 0 1-1 1H10a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1z" fill="#fff"/><path d="M20 7v5h5" fill="#bfdbfe"/><path d="M13 20.5l3 3 5.5-6.5" fill="none" stroke="#1d4ed8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><div>Easy<span>CV</span></div></div><div class="sp"></div><button class="btn" data-home="1">← Home</button></header>
+ <div class="atw" role="main" tabindex="-1">
+  <div class="atl">
+   <h2>ATS Resume Checker</h2>
+   <p class="hint">Upload your CV and get an estimated ATS-readiness score with tips. It checks common ATS rules, such as readable text, clear sections, contact details and keywords.</p>
+   <div class="adz" id="adz"><div class="dzi">📄</div><b>Drag &amp; drop your CV here</b><span>PDF, Word (.docx) or .txt</span><label class="fl">Upload CV<input type="file" id="atf" accept=".pdf,.docx,.txt,application/pdf"></label><small id="atn"></small></div>
+   <button class="fl" data-atuse="1">Use the CV I built in EasyCV</button>
+   <label>CV text (filled automatically, or paste it here)<textarea id="att" rows="6" placeholder="Your CV text will appear here. You can also paste it."></textarea></label>
+   <label>Job description (optional)<textarea id="atj" rows="5" placeholder="Paste the job post to see how well your CV matches its keywords."></textarea></label>
+   <button class="btn p" data-atrun="1">Check ATS score</button>
+  </div>
+  <div class="atr" id="atres"><div class="atp">Your score and tips will appear here.</div></div>
+ </div>
+ <footer>Developed by: <b>Rayhan Hossain Mridha</b></footer>
+</section>
+<div id="app">
+<header>
+  <div class="logo" data-home="1" title="Home" style="cursor:pointer">
+    <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><rect width="34" height="34" rx="9" fill="#1d4ed8"/><path d="M10 7h10l5 5v15a1 1 0 0 1-1 1H10a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1z" fill="#fff"/><path d="M20 7v5h5" fill="#bfdbfe"/><path d="M13 20.5l3 3 5.5-6.5" fill="none" stroke="#1d4ed8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <div>Easy<span>CV</span></div>
+  </div>
+  <div class="sp"></div>
+  <button class="btn" data-privacy="1">🔒 Privacy</button>
+  <button class="btn" data-clr="1">Clear</button>
+  <div class="dd"><button class="btn p" data-menu="1" aria-haspopup="true" aria-expanded="false">Download ▾</button>
+   <div class="menu" role="menu"><button role="menuitem" data-dl="pdf"><span>PDF</span><em class="rec">Recommended</em></button><button role="menuitem" data-dl="print"><span>Print / Save as PDF</span><em class="rec2">Sharpest text</em></button><button role="menuitem" data-dl="docx">Word (.docx)</button><button role="menuitem" data-dl="jpg">JPEG</button><button role="menuitem" data-dl="png">PNG</button></div></div>
+</header>
+<div class="tabs"><button data-tab="ed" class="on">Edit</button><button data-tab="pv">Preview</button></div>
+<main>
+  <div id="form" role="region" aria-label="CV details form"></div>
+  <div id="pv">
+    <div id="bar"></div>
+    <div id="stage"><div id="pages"></div><div id="cv" class="cvx"></div></div>
+  </div>
+</main>
+<footer>Developed by: <b>Rayhan Hossain Mridha</b></footer>
+</div>
+<div id="cm" role="dialog" aria-modal="true" aria-labelledby="ct"><div class="bx"><b id="ct">Crop your photo</b><div id="cvw"><img id="ci" alt=""><i class="ring"></i></div><label>Zoom<input type="range" id="cz" min="1" max="3" step="0.01" value="1"></label><p class="hint">Drag the photo to reposition it.</p><div class="row"><button class="btn" data-crop="no">Cancel</button><button class="btn p" data-crop="ok">Apply</button></div></div></div>
+<div class="dlg" id="dlg-priv" role="dialog" aria-modal="true" aria-labelledby="dlg-priv-t"><div class="bx2">
+ <h2 id="dlg-priv-t">Privacy &amp; saved data</h2>
+ <ul>
+  <li><b>Your files stay on your device.</b> Your CV, photos, signature and resume text are processed in your browser. This website does not upload them to a server, and the code uses no accounts, analytics or cookies.</li>
+  <li><b>What is saved:</b> if auto-save is on, your CV form (including a photo or signature you added) is stored in this browser's local storage on this device only. Passport photos and ATS text are not saved.</li>
+  <li><b>What loads from the internet:</b> PDF, Word, ZIP and PDF-reading helper libraries load from public CDNs (jsDelivr or cdnjs) the first time you use those features. They see your IP address and which library was requested, never your documents. The hosting service may also keep normal server logs.</li>
+  <li><b>Shared computer?</b> Turn auto-save off or delete saved data when you finish.</li>
+ </ul>
+ <label class="chk"><input type="checkbox" id="privauto"> Auto-save my CV on this device</label>
+ <div class="row2"><button class="btn danger" data-wipe="1">Delete saved data</button><button class="btn p" data-dlgclose="dlg-priv">Close</button></div>
+</div></div>
+<div class="dlg" id="dlg-conf" role="alertdialog" aria-modal="true" aria-labelledby="dlg-conf-t" aria-describedby="dlg-conf-p"><div class="bx2">
+ <h2 id="dlg-conf-t"></h2><p id="dlg-conf-p"></p>
+ <div class="row2"><button class="btn" data-cf="no">Cancel</button><button class="btn p" id="dlg-conf-ok" data-cf="yes">Confirm</button></div>
+</div></div>
+<div id="ppcur"></div>
+<div id="toast" role="status" aria-live="polite"></div>
+<script>
+(function(){const sp=document.getElementById('splash');if(!sp)return;const rm=matchMedia('(prefers-reduced-motion:reduce)').matches;let done=false;
+ const end=()=>{if(done)return;done=true;sp.classList.add('out');setTimeout(()=>{sp.remove();document.documentElement.classList.remove('spl')},650)};
+ sp.addEventListener('click',end);document.addEventListener('keydown',e=>{if(e.key==='Escape'||e.key==='Enter')end()});
+ setTimeout(end,rm?900:3000)})();
+/* ---------- infrastructure: lazy libraries + file saving (works on any normal website) ---------- */
+const LIBS={
+ html2canvas:{g:'html2canvas',u:['https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js','https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js']},
+ pdflib:{g:'PDFLib',u:['https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js','https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js']},
+ jszip:{g:'JSZip',u:['https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js','https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js']},
+ pdfjs:{g:'pdfjsLib',u:['https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.min.js','https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js']}};
+const PDFJS_WORKERS=['https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.worker.min.js','https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js'];
+function loadLib(k){const L=LIBS[k];if(window[L.g])return Promise.resolve(window[L.g]);if(L.p)return L.p;
+ L.p=(async()=>{for(const u of L.u){try{await new Promise((ok,no)=>{const e=document.createElement('script');e.src=u;e.async=true;e.onload=ok;e.onerror=()=>{e.remove();no()};document.head.appendChild(e)});if(window[L.g])return window[L.g]}catch(_){}}
+  L.p=null;throw new Error('A helper library ('+k+') could not be loaded. Please check your internet connection and try again.')})();return L.p}
+async function saveBlob(blob,filename){
+ /* Optional host adapter: only used when the page runs inside Claude, where plain downloads are blocked. Not needed on a normal website. */
+ if(window.claude&&typeof window.claude.use==='function'){try{const dl=await window.claude.use('downloads');if(dl){await dl.save({filename,data:blob});return}}catch(e){if(e&&e.code==='declined')return}}
+ const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=filename;a.rel='noopener';a.style.display='none';document.body.appendChild(a);a.click();
+ setTimeout(()=>{a.remove();URL.revokeObjectURL(url)},40000)}
+const $=s=>document.querySelector(s);
+const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const SEC={contact:'Contact',social:'Social Media & Portfolio',summary:'Summary',exp:'Work Experience',edu:'Education',cert:'Other Qualifications & Certification',computer:'Computer Skills',soft:'Soft Skills',lang:'Languages',personal:'Personal Information',objective:'Career Objective'};
+const LV=['Native','Fluent','Advanced','Intermediate','Basic'],LP=[100,90,75,55,35];
+const TP=[{n:'Europass',m:'euro',x:''},{n:'Europass Band',m:'euro',x:'band'},{n:'Sidebar',m:'side',x:''},{n:'Soft Sidebar',m:'side',x:'light'},{n:'Minimal',m:'single',x:'center'},{n:'Banner',m:'single',x:'band'}];
+const COLORS=['#1d4ed8','#0ea5e9','#0f766e','#7c3aed','#be123c','#ea580c','#334155'];
+const SIDE=['contact','social','computer','soft','lang'];
+const PERS=["Father's Name","Mother's Name","Date of Birth","Religion","Nationality","Marital Status","Permanent Address"];
+let icol='#1d4ed8';
+const ICO={ph:'<path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/>',ml:'<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/>',pin:'<path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>'};
+const ICON=n=>`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="${icol}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${ICO[n]}</svg>`;
+const SUG={computer:['MS Word','MS Excel','MS PowerPoint','Google Docs','Google Sheets','Canva','Photoshop','Illustrator','Figma','Video Editing','Bangla & English Typing','Internet & Email','Social Media Marketing','SEO','Facebook Ads','WordPress','HTML/CSS','JavaScript','Python','Tally','QuickBooks'],
+soft:['Communication','Teamwork','Leadership','Time Management','Problem Solving','Critical Thinking','Creativity','Adaptability','Negotiation','Decision Making','Work Ethic','Customer Service','Attention to Detail','Emotional Intelligence','Public Speaking','Stress Management']};
+const sugg=id=>{const have=S[id].split(',').map(x=>x.trim().toLowerCase());return `<span class="hint">Suggestions: click to add or remove</span><div class="pa">${SUG[id].map(x=>{const on=have.includes(x.toLowerCase());return `<button class="ch2${on?' on':''}" data-sug="${id}|${esc(x)}">${on?'✓ ':'+ '}${esc(x)}</button>`}).join('')}</div>`};
+const PLAT=['Facebook','Instagram','LinkedIn','Pinterest','Behance','Dribbble','GitHub','YouTube','X (Twitter)','Portfolio / Website','Other'];
+const url=u=>/^https?:\/\//i.test(u.trim())?u.trim():'https://'+u.trim();
+const short=u=>u.trim().replace(/^https?:\/\/(www\.)?/i,'').replace(/\/$/,'');
+let ORIG='',SORIG='';
+const sigForm=()=>`<p class="hint">Draw your signature below, or upload an image. Leave empty to skip.</p><canvas id="sp" width="400" height="140"></canvas><div class="pa"><button class="fl" data-sg="save">Use drawn signature</button><button class="fl" data-sg="clear">Clear pad</button><label class="fl">Upload image<input type="file" id="sgf" accept="image/*"></label>${SORIG?'<button class="fl" data-recrop="sg">✂ Crop</button>':''}</div>${S.sig?`<div class="pr"><img class="sgp" src="${S.sig}" alt=""><button class="lk" data-sg="rm">Remove signature</button></div>`:''}`;
+const ADD={exp:{role:'',org:'',per:'',desc:''},edu:{role:'',org:'',per:'',desc:''},cert:{role:'',org:'',per:'',desc:''},social:{n:'LinkedIn',u:''},phones:'',lang:{n:'',l:'Intermediate'},personal:{k:'',v:''}};
+let S={tpl:0,c:'#1d4ed8',open:'profile',photo:'',name:'Your Name Here',title:'Your Job Title',phone:'+880 1XXX-XXXXXX',email:'your.email@example.com',address:'Your City, Country',
+summary:'Write a short professional summary about yourself here: your experience, your strengths and what you are looking for.',
+exp:[{role:'Job Title Here',org:'Company Name, City',per:'2021 – Present',desc:'Describe your main responsibilities and achievements here.'}],
+edu:[{role:'Degree Name Here',org:'University / Institution Name',per:'2016 – 2020',desc:''}],
+cert:[{role:'Certificate Name Here',org:'Issuing Organization',per:'2022',desc:''}],
+computer:'MS Word, MS Excel, PowerPoint, Canva',soft:'Communication, Teamwork, Time Management, Creativity',
+lang:[{n:'Bangla',l:'Native'},{n:'English',l:'Advanced'}],
+personal:[{k:"Father's Name",v:'Father Name Here'},{k:"Mother's Name",v:'Mother Name Here'},{k:'Date of Birth',v:'DD Month YYYY'},{k:'Religion',v:'Your Religion'},{k:'Nationality',v:'Your Nationality'},{k:'Marital Status',v:'Single / Married'},{k:'Permanent Address',v:'Village / Area, Post, District'}],
+phones:[],
+social:[{n:'LinkedIn',u:'linkedin.com/in/your-name'},{n:'Facebook',u:'facebook.com/your.name'},{n:'Behance',u:'behance.net/your-name'}],
+objective:'Write your career objective here: what you want to achieve and how you will contribute.',sig:'',
+order:['contact','social','summary','exp','edu','cert','computer','soft','lang','personal','objective']};
+const DEF=JSON.parse(JSON.stringify(S));
+try{const o=JSON.parse(localStorage.getItem('ecv4')||'null');if(o&&o.order)S=Object.assign(S,o)}catch(e){}
+const get=k=>k.split('.').reduce((o,p)=>o==null?o:o[p],S);
+const set=(k,v)=>{const p=k.split('.'),l=p.pop();p.reduce((o,x)=>o[x],S)[l]=v};
+const fld=(l,k,t)=>`<label>${l}${t==='ta'?`<textarea data-k="${k}" rows="4">${esc(get(k))}</textarea>`:`<input data-k="${k}" value="${esc(get(k))}">`}</label>`;
+const rm=(id,i)=>`<button class="lk" data-del="${id},${i}">Remove</button>`;
+const list=(id,lab)=>S[id].map((x,i)=>`<div class="item">${fld(lab[0],`${id}.${i}.role`)}${fld(lab[1],`${id}.${i}.org`)}${fld('Period',`${id}.${i}.per`)}${fld('Description',`${id}.${i}.desc`,'ta')}${rm(id,i)}</div>`).join('')+`<button class="add" data-add="${id}">+ Add</button>`;
+const forms={
+ contact:()=>fld('Phone','phone')+S.phones.map((x,i)=>`<div class="row">${fld('Phone '+(i+2),`phones.${i}`)}<button class="lk" data-del="phones,${i}">✕</button></div>`).join('')+`<button class="add" data-add="phones">+ Add another phone number</button>`+fld('Email','email')+fld('Address','address'),
+ summary:()=>fld('Professional summary','summary','ta'),
+ exp:()=>list('exp',['Job title','Company']),
+ edu:()=>list('edu',['Degree','Institution']),
+ cert:()=>list('cert',['Certificate / Qualification','Issuing organization']),
+ objective:()=>fld('Career objective','objective','ta'),
+ social:()=>S.social.map((x,i)=>`<div class="item"><label>Platform<select data-k="social.${i}.n">${PLAT.map(v=>`<option${v===x.n?' selected':''}>${v}</option>`).join('')}</select></label>${fld('Profile / portfolio link',`social.${i}.u`)}${rm('social',i)}</div>`).join('')+`<button class="add" data-add="social">+ Add link</button>`,
+ computer:()=>fld('Skills (comma separated)','computer')+sugg('computer'),
+ soft:()=>fld('Skills (comma separated)','soft')+sugg('soft'),
+ lang:()=>S.lang.map((x,i)=>`<div class="row">${fld('Language',`lang.${i}.n`)}<label>Level<select data-k="lang.${i}.l">${LV.map(v=>`<option${v===x.l?' selected':''}>${v}</option>`).join('')}</select></label><button class="lk" data-del="lang,${i}">✕</button></div>`).join('')+`<button class="add" data-add="lang">+ Add language</button>`,
+ personal:()=>S.personal.map((x,i)=>`<div class="row">${fld('Label',`personal.${i}.k`)}${fld('Value',`personal.${i}.v`)}<button class="lk" data-del="personal,${i}">✕</button></div>`).join('')+`<button class="add" data-add="personal">+ Add field</button>`
+};
+const profile=()=>`<div class="pr">${S.photo?`<img src="${S.photo}" alt="">`:'<div class="ph0">👤</div>'}<div class="pa"><label class="fl">📷 ${S.photo?'Change photo':'Upload photo'}<input type="file" id="ph" accept="image/*"></label>${ORIG?'<button class="fl" data-recrop="1">✂ Crop</button>':''}${S.photo?'<button class="lk" data-rm="1">Remove</button>':''}</div></div><p class="hint">JPG or PNG. After choosing, drag and zoom to crop.</p>${fld('Full name','name')}${fld('Job title','title')}`;
+const J=JSON.stringify;
+function done(id){const D=DEF;
+ switch(id){
+ case 'profile':return !!S.name.trim()&&S.name!==D.name&&!!S.title.trim();
+ case 'contact':return ['phone','email','address'].every(k=>S[k].trim()&&S[k]!==D[k]);
+ case 'summary':case 'objective':case 'computer':case 'soft':return !!S[id].trim()&&S[id]!==D[id];
+ case 'exp':case 'edu':case 'cert':return S[id].some(x=>x.role.trim()&&x.org.trim())&&J(S[id])!==J(D[id]);
+ case 'social':return S.social.some(x=>x.u.trim())&&J(S.social)!==J(D.social);
+ case 'lang':return S.lang.some(x=>x.n.trim())&&J(S.lang)!==J(D.lang);
+ case 'personal':return S.personal.some(x=>x.v.trim())&&J(S.personal)!==J(D.personal);
+ case 'sig':return !!S.sig;
+ }return false}
+function ticks(){document.querySelectorAll('[data-tk]').forEach(e=>e.classList.toggle('on',done(e.dataset.tk)))}
+function form(){setTimeout(ticks,0);
+ const ids=['profile',...S.order,'sig'];
+ $('#form').innerHTML=autNote()+ids.map((id,n)=>{const op=S.open===id;return `<div class="card${op?' open':''}"><div class="ch" data-open="${id}" role="button" tabindex="0" aria-expanded="${op}"><span class="num">${n+1}</span><b>${id==='profile'?'Photo &amp; Name':id==='sig'?'Signature':SEC[id]}${['cert','sig','social'].includes(id)?' <em class="opt">Optional</em>':''}<i class="tk" data-tk="${id}">✓</i></b>${id!=='profile'&&id!=='sig'?`<span class="mv"><button data-mv="${id},-1" title="Move up" aria-label="Move ${id==="profile"?"":SEC[id]||""} section up">▲</button><button data-mv="${id},1" title="Move down" aria-label="Move ${SEC[id]||""} section down">▼</button></span>`:''}</div>${op?`<div class="cb">${id==='profile'?profile():id==='sig'?sigForm():forms[id]()}<button class="nx" data-next="${n}">${n<ids.length-1?'Next ›':'Done ✓'}</button></div>`:''}</div>`}).join('');
+}
+function sampleMarkup(i,c){const keep=S;S=JSON.parse(JSON.stringify(DEF));S.c=c;try{return markup(i)}finally{S=keep}}
+function bar(){const k=100/794;
+ $('#bar').innerHTML='<div class="bg"><span class="bt">Template</span><div class="tpr" role="group" aria-label="Choose a template">'+TP.map((t,i)=>`<button class="tpc${i===S.tpl?' on':''}" data-tpl="${i}" aria-pressed="${i===S.tpl}" title="${t.n}"><span class="tph"><span class="cvx ${t.m} ${t.x}" style="transform:scale(${k});--c:${S.c};--t:${mix(S.c,.12)}">${sampleMarkup(i,S.c)}</span></span><span class="tpn">${t.n}</span></button>`).join('')+'</div></div><div class="bg"><span class="bt">Colour</span>'+COLORS.map(c=>`<button class="sw${c===S.c?' on':''}" style="background:${c}" data-c="${c}" aria-label="Colour ${c}"></button>`).join('')+`<label class="cu">Custom<input type="color" value="${S.c}" id="cc" aria-label="Custom colour"></label></div>`;
+}
+const tags=s=>String(s).split(',').map(x=>x.trim()).filter(Boolean).map(x=>`<span class="tg">${esc(x)}</span>`).join('');
+function body(id){
+ switch(id){
+ case 'contact':return [...[S.phone,...(S.phones||[])].map(x=>['ph',x]),['ml',S.email],['pin',S.address]].filter(x=>x[1]).map(x=>`<p class="ci"><i>${ICON(x[0])}</i><span>${x[0]==='ml'?`<a href="mailto:${esc(x[1])}">${esc(x[1])}</a>`:x[0]==='ph'?`<a href="tel:${esc(String(x[1]).replace(/[^\d+]/g,''))}">${esc(x[1])}</a>`:esc(x[1])}</span></p>`).join('');
+ case 'social':return S.social.filter(x=>x.u.trim()).map(x=>`<div class="kv"><b>${esc(x.n)}</b><a href="${esc(url(x.u))}" target="_blank" rel="noopener">${esc(short(x.u))}</a></div>`).join('');
+ case 'objective':return S.objective?`<p>${esc(S.objective)}</p>`:'';
+ case 'summary':return S.summary?`<p>${esc(S.summary)}</p>`:'';
+ case 'exp':case 'edu':case 'cert':return S[id].filter(x=>x.role||x.org).map(x=>`<div class="it"><div class="r"><b>${esc(x.role)}</b><span>${esc(x.per)}</span></div><div class="c">${esc(x.org)}</div>${x.desc?`<p>${esc(x.desc)}</p>`:''}</div>`).join('');
+ case 'computer':case 'soft':return tags(S[id]);
+ case 'lang':return S.lang.filter(x=>x.n).map(x=>`<div class="lg"><span>${esc(x.n)}</span><i>${x.l}</i><div class="bar"><u style="width:${LP[LV.indexOf(x.l)]||50}%"></u></div></div>`).join('');
+ case 'personal':return S.personal.filter(x=>x.v).map(x=>`<div class="kv"><b>${esc(x.k)}</b><span>${esc(x.v)}</span></div>`).join('');
+ }return '';
+}
+function mix(h,a){const n=parseInt(h.slice(1),16),f=v=>Math.round(v*a+255*(1-a));return `rgb(${f(n>>16)},${f(n>>8&255)},${f(n&255)})`}
+function markup(i){const T=TP[i];icol=(T.m==='side'&&T.x!=='light')?'#ffffff':S.c;const o=S.order.filter(id=>body(id));
+ const ph=S.photo?`<img class="ph" src="${S.photo}" alt="">`:'';
+ const nm=`<h1>${esc(S.name||'Your Name')}</h1>${S.title?`<h2>${esc(S.title)}</h2>`:''}`;
+ const sc=id=>`<div class="sc"><h3>${SEC[id]}</h3>${body(id)}</div>`;
+ const sg=S.sig?`<div class="sg"><img src="${S.sig}" alt=""><div>${esc(S.name)}</div></div>`:'';
+ let h;
+ if(T.m==='euro')h=`<div class="hd">${ph}<div>${nm}</div></div>`+o.map(id=>`<div class="sc"><div class="lb">${SEC[id]}</div><div>${body(id)}</div></div>`).join('')+sg;
+ else if(T.m==='single')h=`<div class="hd">${ph}<div>${nm}</div></div>`+o.map(sc).join('')+sg;
+ else h=`<div class="sb">${ph}${o.filter(i=>SIDE.includes(i)).map(sc).join('')}</div><div class="mn">${nm}${o.filter(i=>!SIDE.includes(i)).map(sc).join('')}${sg}</div>`;
+ return h}
+function draw(){
+ const T=TP[S.tpl],cv=$('#cv'),h=markup(S.tpl);
+ cv.className=`cvx ${T.m} ${T.x}`;cv.innerHTML=h;
+ cv.style.setProperty('--c',S.c);cv.style.setProperty('--t',mix(S.c,.12));
+ build();ticks();
+ fit();
+ saveNow()
+}
+function build(){
+ const cv=$('#cv'),{br,total}=plan(),pts=[0,...br,total],n=pts.length-1,T=TP[S.tpl];
+ const bg=T.m==='side'?`background:linear-gradient(90deg,${T.x==='light'?mix(S.c,.12):S.c} 250px,#fff 250px);`:'';
+ $('#pages').innerHTML=pts.slice(0,-1).map((st,i)=>{
+  const top=i?M:0,e=Math.min(total,pts[i+1],st+PH-top);
+  return `<div class="pg" style="${bg}"><div class="win" style="top:${top}px;height:${e-st}px"><div class="${cv.className}" style="${cv.getAttribute('style')||''};position:absolute;left:0;top:${-st}px;height:${total}px">${cv.innerHTML}</div></div></div>`+(n>1?`<div class="pgl">Page ${i+1} of ${n}</div>`:'');
+ }).join('');
+}
+function fit(){const st=$('#stage'),pg=$('#pages'),w=(st.clientWidth||826)-32,k=Math.min(1,w/794);pg.style.transform=`scale(${k})`;st.style.height=(pg.offsetHeight*k+32)+'px'}
+window.addEventListener('resize',fit);
+function toast(m,type){const t=$('#toast');t.textContent=m;t.classList.toggle('err',type==='err');t.classList.add('on');clearTimeout(toast._t);toast._t=setTimeout(()=>t.classList.remove('on'),type==='err'?8000:4500)}
+const PH=794*841.89/595.28,M=36;
+function plan(){
+ const cv=$('#cv'),c=cv.getBoundingClientRect(),k=c.width/cv.offsetWidth||1,U=[];
+ const rel=e=>{const q=e.getBoundingClientRect();return[(q.top-c.top)/k,(q.bottom-c.top)/k]};
+ const add=(a,b)=>{if(b-a>2)U.push([a,b])};
+ cv.querySelectorAll('.hd,.ph,.mn>h1,.mn>h2').forEach(e=>add(...rel(e)));
+ cv.querySelectorAll('.sc').forEach(sc=>{const[a,b]=rel(sc);
+  if(b-a<=PH*.4)add(a,b);
+  else{const its=[...sc.querySelectorAll('.it,.kv,.lg,p')];its.forEach(e=>add(...rel(e)));if(its[0])add(a,rel(its[0])[1])}});
+ const total=cv.offsetHeight,end=Math.min(total,Math.max(0,...U.map(u=>u[1]))+24),br=[];let st=0;
+ for(let g=0;g<30;g++){
+  const cap=PH-M*(st?2:1);if(end-st<=cap)break;
+  let y=st+cap;
+  for(let i=0;i<60;i++){const u=U.find(q=>q[0]+1<y&&y<q[1]-1);if(!u)break;y=u[0]}
+  if(y<=st+PH*.25)y=st+cap;
+  br.push(y);st=y;
+ }
+ return{br,total,k};
+}
+function marks(){const el=$('#pgm');if(!el)return;const{br,k}=plan();el.innerHTML=br.map((y,i)=>`<i style="top:${y*k}px"><b>Page ${i+2}</b></i>`).join('')}
+/* ---------- CV export: PDF (with text layer + links), Word, JPEG/PNG, print ---------- */
+let dlBusy=false;
+const exportName=()=>((S.name||'CV').replace(/[^\p{L}\p{N}]+/gu,'_').replace(/^_+|_+$/g,'')||'CV');
+const dataBytes=u=>{const b=atob(u.split(',')[1]),a=new Uint8Array(b.length);for(let i=0;i<b.length;i++)a[i]=b.charCodeAt(i);return a};
+function friendlyErr(e){const m=String((e&&e.message)||e||'');
+ if(/SecurityError|tainted/i.test(m))return 'Your browser blocked image export. Try Chrome, Edge or Firefox, or use "Print / Save as PDF".';
+ if(/memory|allocation|canvas.*size|Invalid array length/i.test(m))return 'Your device ran out of memory while exporting. Try a shorter CV, or use "Print / Save as PDF".';
+ return m.length>140?m.slice(0,140)+'…':m||'Something went wrong. Please try again.'}
+async function svgCanvas(cv,sc){
+ const w=794,h=cv.offsetHeight,css=[...document.querySelectorAll('style')].map(x=>x.textContent).join('\n'),cl=cv.cloneNode(true);
+ cl.removeAttribute('id');cl.style.cssText=cv.getAttribute('style')||'';cl.style.cssText+=';position:static;visibility:visible;width:'+w+'px;height:'+h+'px';
+ const svg=`<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}"><foreignObject width="100%" height="100%"><div xmlns="http://www.w3.org/1999/xhtml" style="width:${w}px;height:${h}px"><style><![CDATA[${css}]]></style>${new XMLSerializer().serializeToString(cl)}</div></foreignObject></svg>`;
+ const img=new Image();await new Promise((ok,no)=>{img.onload=ok;img.onerror=()=>no(new Error('The CV could not be drawn to an image in this browser.'));img.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(svg)});
+ const c=document.createElement('canvas');c.width=Math.round(w*sc);c.height=Math.round(h*sc);const x=c.getContext('2d');x.fillStyle='#fff';x.fillRect(0,0,c.width,c.height);x.drawImage(img,0,0,c.width,c.height);return c}
+async function renderPages(){
+ const cv=$('#cv'),{br,total}=plan(),pts=[0,...br,total],h=cv.offsetHeight,sc=Math.floor(Math.max(1.5,Math.min(3,Math.sqrt(14e6/(794*h))))*10)/10;let full;
+ try{const h2c=await loadLib('html2canvas');full=await h2c(cv,{scale:sc,backgroundColor:'#fff',useCORS:true,windowWidth:1400,onclone:d=>{const c=d.getElementById('cv'),st=d.getElementById('stage'),pv=d.getElementById('pv');pv.style.cssText+=';position:static;display:block;width:900px';d.getElementById('pages').style.display='none';c.style.visibility='visible';c.style.position='static';st.style.height='auto';st.style.overflow='visible';st.style.boxShadow='none'}})}
+ catch(e){console.warn('html2canvas unavailable, using fallback renderer',e);full=await svgCanvas(cv,sc)}
+ const W=full.width,K=W/794,PHp=Math.round(W*841.89/595.28),pages=[];
+ for(let i=0;i<pts.length-1;i++){
+  const top=i?Math.round(M*K):0,s0=Math.round(pts[i]*K),e0=Math.min(full.height,Math.round(pts[i+1]*K),s0+PHp-top),h2=e0-s0,pc=document.createElement('canvas');pc.width=W;pc.height=PHp;
+  const x=pc.getContext('2d');x.fillStyle='#fff';x.fillRect(0,0,W,PHp);x.drawImage(full,0,s0,W,h2,0,top,W,h2);
+  if(top)x.drawImage(full,0,s0+Math.round(2*K),W,1,0,0,W,top);
+  if(top+h2<PHp)x.drawImage(full,0,Math.max(0,e0-Math.round(4*K)),W,1,0,top+h2,W,PHp-top-h2);
+  pages.push(pc)}
+ return{pages,pts}}
+function cvWords(){const cv=$('#cv'),c=cv.getBoundingClientRect(),out=[],tw=document.createTreeWalker(cv,NodeFilter.SHOW_TEXT),rg=document.createRange();let n;
+ while((n=tw.nextNode())){const t=n.nodeValue;if(!t.trim())continue;const re=/\S+/g;let m;
+  while((m=re.exec(t))){rg.setStart(n,m.index);rg.setEnd(n,m.index+m[0].length);const q=rg.getBoundingClientRect();if(q.width>.5)out.push({t:m[0],x:q.left-c.left,y:q.top-c.top,w:q.width,h:q.height})}}
+ return out}
+function cvLinks(){const cv=$('#cv'),c=cv.getBoundingClientRect(),out=[];cv.querySelectorAll('a[href]').forEach(a=>{for(const q of a.getClientRects())if(q.width>1)out.push({u:a.href,x:q.left-c.left,y:q.top-c.top,w:q.width,h:q.height})});return out}
+async function makePdf(pg,pts){
+ const{PDFDocument,StandardFonts,PDFName,PDFString}=await loadLib('pdflib'),doc=await PDFDocument.create(),font=await doc.embedFont(StandardFonts.Helvetica),nm=S.name||'CV';
+ doc.setTitle(nm+' - CV');doc.setAuthor(nm);doc.setSubject('Curriculum Vitae');doc.setCreator('EasyCV');doc.setProducer('EasyCV');
+ const K=595.28/794,PW=595.28,PHt=841.89,words=cvWords(),links=cvLinks(),enc=t=>[...t].filter(ch=>{try{font.encodeText(ch);return true}catch(_){return false}}).join('');
+ for(let i=0;i<pg.length;i++){
+  const page=doc.addPage([PW,PHt]),jpg=await doc.embedJpg(dataBytes(pg[i].toDataURL('image/jpeg',.93)));page.drawImage(jpg,{x:0,y:0,width:PW,height:PHt});
+  const s0=pts[i],e0=pts[i+1],top=i?M:0,last=i===pg.length-1,inPg=cy=>cy>=s0-1&&(last?true:cy<e0);
+  for(const w of words){if(!inPg(w.y+w.h/2))continue;const t=enc(w.t);if(!t)continue;const size=Math.max(4,w.h/1.15*K),yb=PHt-(w.y+w.h-s0+top)*K+size*.2;page.drawText(t+' ',{x:w.x*K,y:yb,size,font,opacity:0})}
+  const an=[];for(const l of links){if(!inPg(l.y+l.h/2))continue;const x1=l.x*K,x2=(l.x+l.w)*K,y2=PHt-(l.y-s0+top)*K,y1=PHt-(l.y+l.h-s0+top)*K;
+   an.push(doc.context.register(doc.context.obj({Type:'Annot',Subtype:'Link',Rect:[x1,y1,x2,y2],Border:[0,0,0],A:{Type:'Action',S:'URI',URI:PDFString.of(l.u)}})))}
+  if(an.length)page.node.set(PDFName.of('Annots'),doc.context.obj(an))}
+ return new Blob([await doc.save()],{type:'application/pdf'})}
+async function exportImages(ext){
+ const{pages}=await renderPages(),mime=ext==='png'?'image/png':'image/jpeg',blobs=await Promise.all(pages.map(c=>new Promise((ok,no)=>c.toBlob(b=>b?ok(b):no(new Error('Image export failed.')),mime,.95)))),base=exportName();
+ if(blobs.length===1)return{blob:blobs[0],name:`${base}_CV.${ext}`};
+ const Z=await loadLib('jszip'),z=new Z();blobs.forEach((b,i)=>z.file(`${base}_CV_page${i+1}.${ext}`,b));
+ return{blob:await z.generateAsync({type:'blob'}),name:`${base}_CV_${ext.toUpperCase()}_pages.zip`,zip:true}}
+function printCv(){
+ const old=$('#printroot');if(old)old.remove();const root=document.createElement('div');root.id='printroot';
+ root.innerHTML=[...document.querySelectorAll('#pages .pg')].map(p=>p.outerHTML).join('');document.body.appendChild(root);document.body.classList.add('printing');
+ const done=()=>{document.body.classList.remove('printing');root.remove();window.removeEventListener('afterprint',done)};window.addEventListener('afterprint',done);
+ toast('In the print window choose "Save as PDF" as the destination.');setTimeout(()=>{try{window.print()}catch(e){done();toast('Printing is not available in this view. Open the site in a normal browser tab.','err')}},80)}
+async function download(t){
+ if(t==='print'){printCv();return}
+ if(dlBusy){toast('Please wait, your file is still being prepared…');return}dlBusy=true;
+ const label={pdf:'PDF',docx:'Word file',jpg:'JPEG',png:'PNG'}[t];toast('Preparing your '+label+'…');
+ try{let blob,name;
+  if(t==='docx'){blob=await makeDocx();name=exportName()+'_CV.docx'}
+  else if(t==='pdf'){const r=await renderPages();blob=await makePdf(r.pages,r.pts);name=exportName()+'_CV.pdf'}
+  else{const r=await exportImages(t==='png'?'png':'jpg');blob=r.blob;name=r.name;if(r.zip)toast('Your CV has several pages, so they are saved together in one ZIP file.')}
+  await saveBlob(blob,name);toast('Saved: '+name)}
+ catch(e){console.error(e);toast('Download failed. '+friendlyErr(e),'err')}
+ finally{dlBusy=false;fit()}}
+document.addEventListener('input',e=>{const k=e.target.dataset&&e.target.dataset.k;if(k){set(k,e.target.value);draw()}else if(e.target.id==='cc'){S.c=e.target.value;document.querySelectorAll('.sw').forEach(b=>b.classList.remove('on'));document.querySelectorAll('.tph .cvx').forEach(x=>{x.style.setProperty('--c',S.c);x.style.setProperty('--t',mix(S.c,.12))});draw()}else if(e.target.id==='cz'){const n=cr.b*+e.target.value,k=n/cr.s;cr.x=VW/2-(VW/2-cr.x)*k;cr.y=VH/2-(VH/2-cr.y)*k;cr.s=n;place()}});
+document.addEventListener('change',async e=>{const id=e.target.id,f=e.target.files&&e.target.files[0];if(!f)return;
+ if(id==='ph'){ORIG=await rd(f);openCrop('ph');e.target.value=''}
+ else if(id==='sgf'){SORIG=await rd(f);openCrop('sg',SORIG);e.target.value=''}
+ else if(id==='ppf'||id==='ppf2'){await ppLoadFile(f);e.target.value=''}});
+document.addEventListener('click',e=>{
+ if(!e.target.closest('.dd'))$('.dd').classList.remove('open');
+ const t=e.target.closest('button,[data-open]');if(!t)return;const d=t.dataset;
+ if(d.mv){const[id,dir]=d.mv.split(',');const i=S.order.indexOf(id),j=i+ +dir;if(j>=0&&j<S.order.length){[S.order[i],S.order[j]]=[S.order[j],S.order[i]];form();draw()}}
+ else if(d.add){S[d.add].push(typeof ADD[d.add]==='string'?ADD[d.add]:{...ADD[d.add]});form();draw()}
+ else if(d.del){const[id,i]=d.del.split(',');S[id].splice(+i,1);form();draw()}
+ else if(d.next!==undefined){const ids=['profile',...S.order];S.open=ids[+d.next+1]||'';form()}
+ else if(d.open!==undefined){S.open=S.open===d.open?'':d.open;form()}
+ else if(d.tpl!==undefined){S.tpl=+d.tpl;bar();draw();document.body.classList.contains('ed')||0}
+ else if(d.c){S.c=d.c;bar();draw()}
+ else if(d.rm){S.photo='';ORIG='';form();draw()}
+ else if(d.recrop){openCrop(d.recrop==='sg'?'sg':'ph',d.recrop==='sg'?SORIG:ORIG)}
+ else if(d.sug){const[id,v]=d.sug.split('|');const a=S[id].split(',').map(x=>x.trim()).filter(Boolean),i=a.findIndex(x=>x.toLowerCase()===v.toLowerCase());if(i>=0)a.splice(i,1);else a.push(v);S[id]=a.join(', ');form();draw()}
+ else if(d.crop){if(d.crop==='ok')applyCrop();else $('#cm').classList.remove('on')}
+ else if(d.sg){const c=$('#sp');
+  if(d.sg==='clear'&&c)c.getContext('2d').clearRect(0,0,c.width,c.height);
+  else if(d.sg==='save'&&c){const b=document.createElement('canvas');b.width=c.width;b.height=c.height;if(c.toDataURL()===b.toDataURL()){toast('Please draw your signature first');return}SORIG='';S.sig=c.toDataURL('image/png');form();draw()}
+  else if(d.sg==='rm'){S.sig='';SORIG='';form();draw()}}
+ else if(d.menu){const o=$('.dd').classList.toggle('open');t.setAttribute('aria-expanded',o)}
+ else if(d.dl){$('.dd').classList.remove('open');download(d.dl)}
+ else if(d.tab){document.body.classList.toggle('ed',d.tab==='ed');document.querySelectorAll('.tabs button').forEach(b=>b.classList.toggle('on',b===t));setTimeout(fit,30)}
+ else if(d.clr){askConfirm('Clear the whole CV?','This empties every section of your CV. Files you already downloaded are not affected. This cannot be undone.','Clear everything').then(ok=>{if(!ok)return;Object.assign(S,{photo:'',name:'',title:'',phone:'',email:'',address:'',summary:'',exp:[{...ADD.exp}],edu:[{...ADD.edu}],computer:'',soft:'',lang:[{n:'',l:'Intermediate'}],personal:PERS.map(k=>({k,v:''})),cert:[{...ADD.cert}],social:[{...ADD.social}],phones:[],objective:'',sig:'',open:'profile'});form();draw();toast('Cleared. Start fresh!')})}
+});
+const rd=f=>new Promise(r=>{const x=new FileReader();x.onload=()=>r(x.result);x.readAsDataURL(f)});
+const img$=u=>new Promise((ok,no)=>{const i=new Image();i.onload=()=>ok(i);i.onerror=()=>no(new Error('The image could not be opened. Please choose a JPG, PNG or WebP photo.'));i.src=u});
+async function shrink(u,m){const i=await img$(u),k=Math.min(1,m/i.width),c=document.createElement('canvas');c.width=Math.round(i.width*k);c.height=Math.round(i.height*k);c.getContext('2d').drawImage(i,0,0,c.width,c.height);return c.toDataURL('image/png')}
+let VW=280,VH=280,CM='ph',cr={x:0,y:0,s:1,b:1,im:null},dg=null,dr=false;
+async function openCrop(m,src){CM=m;const u=src||ORIG;VW=m==='ph'?280:m==='pp'?240:300;VH=m==='ph'?280:m==='pp'?240*SZ[PP.sizeI].h/SZ[PP.sizeI].w:120;
+ const v=$('#cvw');v.style.width=VW+'px';v.style.height=VH+'px';v.classList.toggle('rect',m!=='ph');
+ $('#ct').textContent=m==='ph'?'Crop your photo':m==='pp'?'Crop for passport photo':'Crop your signature';$('#cz').max=m==='ph'?3:5;
+ const im=await img$(u);cr.im=im;cr.b=m!=='sg'?Math.max(VW/im.width,VH/im.height):Math.min(VW/im.width,VH/im.height);cr.s=cr.b;
+ cr.x=(VW-im.width*cr.s)/2;cr.y=(VH-im.height*cr.s)/2;$('#cz').value=1;$('#ci').src=u;$('#cm').classList.add('on');place()}
+function place(){const im=cr.im,w=im.width*cr.s,h=im.height*cr.s;cr.x=w<=VW?(VW-w)/2:Math.min(0,Math.max(VW-w,cr.x));cr.y=h<=VH?(VH-h)/2:Math.min(0,Math.max(VH-h,cr.y));const i=$('#ci');i.style.width=w+'px';i.style.height=h+'px';i.style.left=cr.x+'px';i.style.top=cr.y+'px'}
+function applyCrop(){const o=CM==='ph'?600:CM==='pp'?Math.round(SZ[PP.sizeI].w/25.4*300):900,k=o/VW,c=document.createElement('canvas');c.width=o;c.height=CM==='pp'?ppDims(PP.sizeI).H:Math.round(VH*k);const x=c.getContext('2d');x.imageSmoothingQuality='high';
+ if(CM!=='sg'){x.fillStyle='#fff';x.fillRect(0,0,c.width,c.height)}
+ x.drawImage(cr.im,cr.x*k,cr.y*k,cr.im.width*cr.s*k,cr.im.height*cr.s*k);
+ if(CM==='pp'){$('#cm').classList.remove('on');ppSet(c);return}
+ if(CM==='ph')S.photo=c.toDataURL('image/jpeg',.92);else S.sig=c.toDataURL('image/png');
+ $('#cm').classList.remove('on');form();draw()}
+document.addEventListener('pointerdown',e=>{
+ if(e.target.id==='cvw'){dg=[e.clientX-cr.x,e.clientY-cr.y];e.target.setPointerCapture(e.pointerId)}
+ else if(e.target.id==='sp'){dr=true;const c=e.target.getContext('2d');c.lineWidth=2.5;c.lineCap='round';c.lineJoin='round';c.strokeStyle='#0f172a';c.beginPath();c.moveTo(...pc(e));e.target.setPointerCapture(e.pointerId);e.preventDefault()}});
+document.addEventListener('pointermove',e=>{if(dg){cr.x=e.clientX-dg[0];cr.y=e.clientY-dg[1];place()}else if(dr&&e.target.id==='sp'){const c=e.target.getContext('2d');c.lineTo(...pc(e));c.stroke()}});
+document.addEventListener('pointerup',()=>{dg=null;dr=false});
+function pc(e){const c=$('#sp'),b=c.getBoundingClientRect();return[(e.clientX-b.left)*c.width/b.width,(e.clientY-b.top)*c.height/b.height]}
+async function makeDocx(){
+ const Z=await loadLib('jszip'),z=new Z(),col=S.c.slice(1).toUpperCase(),rels=[];let n=9;const TW=9706;
+ const bin=u=>{const b=atob(u.split(',')[1]),a=new Uint8Array(b.length);for(let i=0;i<b.length;i++)a[i]=b.charCodeAt(i);return a};
+ const R=(t,o={})=>`<w:r><w:rPr>${o.b?'<w:b/>':''}${o.i?'<w:i/>':''}${o.c?`<w:color w:val="${o.c}"/>`:''}${o.s?`<w:sz w:val="${o.s}"/><w:szCs w:val="${o.s}"/>`:''}</w:rPr><w:t xml:space="preserve">${esc(t)}</w:t></w:r>`;
+ const T=(t,o)=>String(t).split('\n').map((l,i)=>(i?'<w:r><w:br/></w:r>':'')+R(l,o)).join('');
+ const TAB='<w:r><w:tab/></w:r>';
+ const P=(r,o={})=>`<w:p><w:pPr>${o.st?`<w:pStyle w:val="${o.st}"/>`:''}${o.kn?'<w:keepNext/>':''}${o.kl?'<w:keepLines/>':''}${o.bd?`<w:pBdr><w:bottom w:val="single" w:sz="6" w:space="1" w:color="${col}"/></w:pBdr>`:''}${o.tabs?`<w:tabs>${o.tabs}</w:tabs>`:''}<w:spacing w:before="${o.bf||0}" w:after="${o.af===undefined?60:o.af}"/>${o.ind||''}${o.al?`<w:jc w:val="${o.al}"/>`:''}</w:pPr>${r}</w:p>`;
+ const link=(url,txt)=>{const id='rId'+(++n);rels.push(`<Relationship Id="${id}" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="${esc(url)}" TargetMode="External"/>`);return `<w:hyperlink r:id="${id}" w:history="1"><w:r><w:rPr><w:rStyle w:val="Hyperlink"/></w:rPr><w:t xml:space="preserve">${esc(txt)}</w:t></w:r></w:hyperlink>`};
+ const IMG=async(u,h,ext)=>{const im=await img$(u),w=Math.round(h*im.width/im.height),id=++n,nm=`media/i${id}.${ext}`;z.file('word/'+nm,bin(u));rels.push(`<Relationship Id="rId${id}" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="${nm}"/>`);
+  return `<w:r><w:drawing><wp:inline distT="0" distB="0" distL="0" distR="0"><wp:extent cx="${w}" cy="${h}"/><wp:docPr id="${id}" name="img${id}" descr="${ext==='jpeg'?'Profile photo':'Signature'}"/><a:graphic><a:graphicData uri="http://schemas.openxmlformats.org/drawingml/2006/picture"><pic:pic><pic:nvPicPr><pic:cNvPr id="${id}" name="img${id}"/><pic:cNvPicPr/></pic:nvPicPr><pic:blipFill><a:blip r:embed="rId${id}"/><a:stretch><a:fillRect/></a:stretch></pic:blipFill><pic:spPr><a:xfrm><a:off x="0" y="0"/><a:ext cx="${w}" cy="${h}"/></a:xfrm><a:prstGeom prst="rect"><a:avLst/></a:prstGeom></pic:spPr></pic:pic></a:graphicData></a:graphic></wp:inline></w:drawing></w:r>`};
+ const head=P(R(S.name||'Your Name',{b:1,c:col,s:48}),{st:'Title',af:0})+(S.title?P(R(S.title,{c:'526071',s:26}),{af:80}):'');
+ let b='';
+ if(S.photo){const ph=await IMG(S.photo,1150000,'jpeg');
+  b+=`<w:tbl><w:tblPr><w:tblW w:w="${TW}" w:type="dxa"/><w:tblLayout w:type="fixed"/><w:tblCellMar><w:left w:w="0" w:type="dxa"/><w:right w:w="0" w:type="dxa"/></w:tblCellMar></w:tblPr><w:tblGrid><w:gridCol w:w="${TW-2100}"/><w:gridCol w:w="2100"/></w:tblGrid><w:tr><w:tc><w:tcPr><w:tcW w:w="${TW-2100}" w:type="dxa"/><w:vAlign w:val="center"/></w:tcPr>${head}</w:tc><w:tc><w:tcPr><w:tcW w:w="2100" w:type="dxa"/></w:tcPr>${P(ph,{al:'right',af:0})}</w:tc></w:tr></w:tbl>`+P('',{af:0})}
+ else b+=head;
+ const bullet=(t)=>P(R('•  ')+T(t),{ind:'<w:ind w:left="340" w:hanging="260"/>',kl:1,af:30});
+ for(const id of S.order){
+  if(!body(id))continue;
+  b+=P(R(SEC[id].toUpperCase(),{b:1,c:col,s:22}),{st:'Heading1',bd:1,kn:1,bf:200,af:80});
+  if(id==='contact'){
+   [...[S.phone,...(S.phones||[])].filter(Boolean).map(x=>R('Phone: ',{b:1})+link('tel:'+x.replace(/[^\d+]/g,''),x)),S.email&&R('Email: ',{b:1})+link('mailto:'+S.email,S.email),S.address&&R('Address: ',{b:1})+R(S.address)].filter(Boolean).forEach(x=>{b+=P(x,{af:30})})}
+  else if(id==='social')S.social.filter(x=>x.u.trim()).forEach(x=>{b+=P(R(x.n+': ',{b:1})+link(url(x.u),short(x.u)),{af:30})});
+  else if(id==='summary'||id==='objective')b+=P(T(S[id]),{kl:1});
+  else if(id==='exp'||id==='edu'||id==='cert')S[id].filter(x=>x.role||x.org).forEach(x=>{
+   b+=P(R(x.role,{b:1})+(x.per?TAB+R(x.per,{c:'526071',s:19}):''),{kn:1,af:0,tabs:`<w:tab w:val="right" w:pos="${TW}"/>`});
+   b+=P(R(x.org,{c:col}),{kn:!!x.desc,af:x.desc?30:80});
+   if(x.desc)String(x.desc).split('\n').filter(Boolean).forEach(d=>{b+=bullet(d)});b+=P('',{af:40})});
+  else if(id==='computer'||id==='soft')b+=P(R(S[id].split(',').map(x=>x.trim()).filter(Boolean).join('  •  ')));
+  else if(id==='lang')S.lang.filter(x=>x.n).forEach(x=>{b+=P(R(x.n,{b:1})+R('  –  '+x.l),{af:30})});
+  else if(id==='personal')S.personal.filter(x=>x.v).forEach(x=>{b+=P(R(x.k,{b:1})+TAB+R(x.v),{af:30,kl:1,tabs:'<w:tab w:val="left" w:pos="2600"/>',ind:'<w:ind w:left="2600" w:hanging="2600"/>'})})}
+ if(S.sig){b+=P(await IMG(S.sig,560000,'png'),{al:'right',bf:360,af:0,kn:1});b+=P(R(S.name,{s:19,c:'526071'}),{al:'right'})}
+ const H='<?xml version="1.0" encoding="UTF-8" standalone="yes"?>',W='xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"';
+ const NS=W+' xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing" xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:pic="http://schemas.openxmlformats.org/drawingml/2006/picture"';
+ z.file('[Content_Types].xml',H+'<Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types"><Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/><Default Extension="xml" ContentType="application/xml"/><Default Extension="png" ContentType="image/png"/><Default Extension="jpeg" ContentType="image/jpeg"/><Override PartName="/word/document.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml"/><Override PartName="/word/styles.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.styles+xml"/><Override PartName="/docProps/core.xml" ContentType="application/vnd.openxmlformats-package.core-properties+xml"/></Types>');
+ z.file('_rels/.rels',H+'<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="word/document.xml"/><Relationship Id="rId2" Type="http://schemas.openxmlformats.org/package/2006/relationships/metadata/core-properties" Target="docProps/core.xml"/></Relationships>');
+ z.file('docProps/core.xml',H+`<cp:coreProperties xmlns:cp="http://schemas.openxmlformats.org/package/2006/metadata/core-properties" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><dc:title>${esc((S.name||'CV')+' - CV')}</dc:title><dc:creator>${esc(S.name||'')}</dc:creator><dcterms:created xsi:type="dcterms:W3CDTF">${new Date().toISOString()}</dcterms:created></cp:coreProperties>`);
+ z.file('word/styles.xml',H+`<w:styles ${W}><w:docDefaults><w:rPrDefault><w:rPr><w:rFonts w:ascii="Calibri" w:hAnsi="Calibri" w:eastAsia="Calibri" w:cs="Nirmala UI"/><w:sz w:val="21"/><w:szCs w:val="21"/><w:lang w:val="en-US" w:bidi="bn-BD"/></w:rPr></w:rPrDefault><w:pPrDefault><w:pPr><w:spacing w:after="60" w:line="264" w:lineRule="auto"/></w:pPr></w:pPrDefault></w:docDefaults><w:style w:type="paragraph" w:default="1" w:styleId="Normal"><w:name w:val="Normal"/><w:qFormat/></w:style><w:style w:type="paragraph" w:styleId="Title"><w:name w:val="Title"/><w:basedOn w:val="Normal"/><w:next w:val="Normal"/><w:qFormat/></w:style><w:style w:type="paragraph" w:styleId="Heading1"><w:name w:val="heading 1"/><w:basedOn w:val="Normal"/><w:next w:val="Normal"/><w:qFormat/><w:pPr><w:keepNext/><w:keepLines/><w:outlineLvl w:val="0"/></w:pPr></w:style><w:style w:type="character" w:styleId="Hyperlink"><w:name w:val="Hyperlink"/><w:rPr><w:color w:val="0563C1"/><w:u w:val="single"/></w:rPr></w:style></w:styles>`);
+ z.file('word/_rels/document.xml.rels',H+'<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/styles" Target="styles.xml"/>'+rels.join('')+'</Relationships>');
+ z.file('word/document.xml',H+`<w:document ${NS}><w:body>${b}<w:sectPr><w:pgSz w:w="11906" w:h="16838"/><w:pgMar w:top="1000" w:right="1100" w:bottom="1000" w:left="1100" w:header="500" w:footer="500" w:gutter="0"/></w:sectPr></w:body></w:document>`);
+ return z.generateAsync({type:'blob',mimeType:'application/vnd.openxmlformats-officedocument.wordprocessingml.document'})}
+function buildTpl(){const k=250/794,tr=$('#tpltrack');if(!tr)return;const keep=S;S=JSON.parse(JSON.stringify(DEF));try{
+ tr.innerHTML=TP.map((t,i)=>`<button class="slide" data-tplpick="${i}"><div class="th"><div class="cvx ${t.m} ${t.x}" style="transform:scale(${k});--c:${S.c};--t:${mix(S.c,.12)}">${markup(i)}</div></div><b>${t.n}</b><span>Click to use this template</span></button>`).join('')}finally{S=keep}}
+document.addEventListener('click',e=>{
+ const pk=e.target.closest('[data-tplpick]');
+ if(pk){S.tpl=+pk.dataset.tplpick;bar();document.body.classList.add('in');scrollTo(0,0);draw();return}
+ const ft=e.target.closest('[data-feat]');
+ document.querySelectorAll('.tdd.open').forEach(d=>{if(!ft||!d.contains(ft))d.classList.remove('open')});
+ if(ft){const o=ft.closest('.tdd').classList.toggle('open');ft.setAttribute('aria-expanded',o);return}
+ const gt=e.target.closest('[data-goto]');
+ if(gt){const el=document.getElementById(gt.dataset.goto);if(el)el.scrollIntoView({behavior:'smooth',block:'start'});return}
+ const sl=e.target.closest('[data-slide]');
+ if(sl){$('#tpltrack').scrollBy({left:+sl.dataset.slide*272});return}
+ if(e.target.closest('[data-start]')){document.body.classList.add('in');scrollTo(0,0);draw()}
+ else if(e.target.closest('[data-home]')){document.body.classList.remove('in','ph','at');scrollTo(0,0);buildTpl()}
+ else if(e.target.closest('[data-ats]')){document.body.classList.add('at');scrollTo(0,0)}
+ else if(e.target.closest('[data-pp]')){document.body.classList.add('ph');scrollTo(0,0)}
+});
+const SZ=[{n:'35 × 45 mm (standard passport / visa)',w:35,h:45},{n:'40 × 50 mm',w:40,h:50},{n:'45 × 55 mm',w:45,h:55},{n:'2 × 2 inch (51 × 51 mm)',w:50.8,h:50.8}];
+const ppDims=i=>({W:Math.round(SZ[i].w/25.4*300),H:Math.round(SZ[i].h/25.4*300)});
+const PP={src:'',sizeI:0,base:null,mask:null,W:0,H:0,ref:[255,255,255],tol:38,rm:true,bg:'#ffffff',mode:'',brush:20,method:'auto',shift:0,feather:1,bri:0,con:0,sharp:0,ver:0,undo:[],adjKey:'',adj:null,last:null,hb:8,z:1,tx:0,ty:0,f:1,lz:4,space:false};
+ppMethUI();
+$('#pps').innerHTML=SZ.map((z,i)=>`<option value="${i}">${z.n}</option>`).join('');
+function ppMethUI(){document.querySelectorAll('[data-ppmeth]').forEach(b=>b.classList.toggle('on',b.dataset.ppmeth===PP.method));$('#ppsens').style.display=PP.method==='colour'?'flex':'none';
+ $('#pph').textContent=PP.method==='auto'?'Auto subject finds the person in the middle of the photo and removes everything else. Fix any spots with Erase / Restore.':'Removes one plain background colour (wall, sheet). Use Sensitivity or pick the colour yourself.'}
+function ppRun(){if(PP.method==='auto'){toast('Detecting subject…');setTimeout(ppAuto,40)}else ppMask()}
+function boxBlur(a,W,H,r){if(r<1)return a;const t=new Float32Array(a.length),o=new Uint8ClampedArray(a.length),n=2*r+1;
+ for(let y=0;y<H;y++)for(let x=0;x<W;x++){let s=0;for(let k=-r;k<=r;k++)s+=a[y*W+Math.min(W-1,Math.max(0,x+k))];t[y*W+x]=s/n}
+ for(let y=0;y<H;y++)for(let x=0;x<W;x++){let s=0;for(let k=-r;k<=r;k++)s+=t[Math.min(H-1,Math.max(0,y+k))*W+x];o[y*W+x]=s/n}
+ return o}
+function morph(a,W,H,grow){const o=new Uint8ClampedArray(a.length),f=grow?Math.max:Math.min;
+ for(let y=0;y<H;y++)for(let x=0;x<W;x++){const j=y*W+x,v=a[j];o[j]=f(v,x>0?a[j-1]:v,x<W-1?a[j+1]:v,y>0?a[j-W]:v,y<H-1?a[j+W]:v)}
+ return o}
+function ppAlpha(){const{W,H}=PP;let a=PP.mask;const n=PP.shift;for(let i=0;i<Math.abs(n);i++)a=morph(a,W,H,n>0);return boxBlur(a,W,H,PP.feather)}
+function km(S,K){if(!S.length)return[[128,128,128]];const dd=(a,b)=>(a[0]-b[0])**2+(a[1]-b[1])**2+(a[2]-b[2])**2,C=[S[0]];
+ while(C.length<K){let best=S[0],bd=-1;for(const p of S){let m=1e12;for(const c of C)m=Math.min(m,dd(p,c));if(m>bd){bd=m;best=p}}C.push(best)}
+ for(let it=0;it<6;it++){const A=C.map(()=>[0,0,0,0]);for(const p of S){let bi=0,bm=1e12;C.forEach((c,i)=>{const v=dd(p,c);if(v<bm){bm=v;bi=i}});const a=A[bi];a[0]+=p[0];a[1]+=p[1];a[2]+=p[2];a[3]++}
+  A.forEach((a,i)=>{if(a[3])C[i]=[a[0]/a[3],a[1]/a[3],a[2]/a[3]]})}
+ return C}
+function gmm(S,K){const C=km(S,K),A=C.map(()=>({n:0,s:[0,0,0]}));
+ for(const p of S){let bi=0,bm=1e12;C.forEach((c,i)=>{const v=(p[0]-c[0])**2+(p[1]-c[1])**2+(p[2]-c[2])**2;if(v<bm){bm=v;bi=i}});A[bi].n++;for(let k=0;k<3;k++)A[bi].s[k]+=(p[k]-C[bi][k])**2}
+ return C.map((c,i)=>({m:c,w:Math.max(A[i].n,1)/S.length,v:A[i].s.map(x=>Math.max(40,x/Math.max(A[i].n,1)))}))}
+function gl(G,r,g,b){let s=0;for(const c of G){const a=r-c.m[0],e=g-c.m[1],f=b-c.m[2];s+=c.w*Math.exp(-.5*(a*a/c.v[0]+e*e/c.v[1]+f*f/c.v[2]))/Math.sqrt(c.v[0]*c.v[1]*c.v[2])}return Math.log(s+1e-12)}
+function bmean(a,W,H,r){const t=new Float32Array(a.length),o=new Float32Array(a.length),n=2*r+1;
+ for(let y=0;y<H;y++){let s=0;const b=y*W;for(let x=-r;x<=r;x++)s+=a[b+Math.min(W-1,Math.max(0,x))];
+  for(let x=0;x<W;x++){t[b+x]=s/n;s+=a[b+Math.min(W-1,x+r+1)]-a[b+Math.max(0,x-r)]}}
+ for(let x=0;x<W;x++){let s=0;for(let y=-r;y<=r;y++)s+=t[Math.min(H-1,Math.max(0,y))*W+x];
+  for(let y=0;y<H;y++){o[y*W+x]=s/n;s+=t[Math.min(H-1,y+r+1)*W+x]-t[Math.max(0,y-r)*W+x]}}
+ return o}
+function guided(I,P,W,H,r,eps){const N=W*H,mI=bmean(I,W,H,r),mP=bmean(P,W,H,r),II=new Float32Array(N),IP=new Float32Array(N);
+ for(let j=0;j<N;j++){II[j]=I[j]*I[j];IP[j]=I[j]*P[j]}
+ const cII=bmean(II,W,H,r),cIP=bmean(IP,W,H,r),A=new Float32Array(N),B=new Float32Array(N);
+ for(let j=0;j<N;j++){const v=cII[j]-mI[j]*mI[j],c=cIP[j]-mI[j]*mP[j];A[j]=c/(v+eps);B[j]=mP[j]-A[j]*mI[j]}
+ const mA=bmean(A,W,H,r),mB=bmean(B,W,H,r),q=new Float32Array(N);for(let j=0;j<N;j++)q[j]=mA[j]*I[j]+mB[j];return q}
+function ppAuto(){
+ const{W,H}=PP,d=PP.base.data,N=W*H,cx=W/2,sf=new Uint8Array(N),sb=new Uint8Array(N),pr=new Float32Array(N),sm=t=>t<=0?0:t>=1?1:t*t*(3-2*t);
+ for(let y=0;y<H;y++)for(let x=0;x<W;x++){const j=y*W+x,e=((x-cx)/(.16*W))**2+((y-.42*H)/(.2*H))**2;
+  if(e<1||(y>.76*H&&Math.abs(x-cx)<.25*W))sf[j]=1;
+  else if(y<.05*H||((x<.05*W||x>.95*W)&&y<.75*H)||(y>.9*H&&Math.abs(x-cx)>.46*W))sb[j]=1;
+  pr[j]=Math.max(Math.exp(-(((x-cx)/(.22*W))**2+((y-.4*H)/(.26*H))**2)),Math.exp(-(((x-cx)/(.4*W))**2))*sm((y/H-.55)/.2))}
+ const wh=new Float32Array(N),wv=new Float32Array(N),g=(a,b)=>{const i=a*4,k=b*4,r=d[i]-d[k],q=d[i+1]-d[k+1],z=d[i+2]-d[k+2];return Math.exp(-(r*r+q*q+z*z)/968)};
+ for(let y=0;y<H;y++)for(let x=0;x<W;x++){const j=y*W+x;if(x<W-1)wh[j]=g(j,j+1);if(y<H-1)wv[j]=g(j,j+W)}
+ const L=new Uint8Array(N).fill(2);
+ for(let j=0;j<N;j++){const x=j%W,y=(j-x)/W;if(sf[j])L[j]=1;else if(sb[j]||(y<.72*H&&((x-cx)/(.36*W))**2+((y-.45*H)/(.5*H))**2>1))L[j]=0}
+ const sample=v=>{let c=0;for(let j=0;j<N;j++)if(L[j]===v)c++;const st=Math.max(1,Math.floor(c/2500)),o=[];let t=0;for(let j=0;j<N;j++)if(L[j]===v&&t++%st===0)o.push([d[j*4],d[j*4+1],d[j*4+2]]);return o};
+ let p=new Float32Array(N),q=new Float32Array(N);
+ for(let it=0;it<3;it++){
+  const Gf=gmm(sample(1),5),Gb=gmm(sample(0),6);
+  for(let j=0;j<N;j++){if(sf[j]){p[j]=1;continue}if(sb[j]){p[j]=0;continue}
+   const r=d[j*4],gg=d[j*4+1],b=d[j*4+2],df=Math.max(-12,Math.min(12,gl(Gf,r,gg,b)-gl(Gb,r,gg,b)));
+   p[j]=1/(1+Math.exp(-(.4*df+3*(pr[j]-.3))))}
+  for(let k=0;k<16;k++){
+   for(let y=0;y<H;y++)for(let x=0;x<W;x++){const j=y*W+x;if(sf[j]||sb[j]){q[j]=p[j];continue}
+    let s=p[j]*.35,w=.35,a;
+    if(x>0){a=wh[j-1];s+=a*p[j-1];w+=a}
+    if(x<W-1){a=wh[j];s+=a*p[j+1];w+=a}
+    if(y>0){a=wv[j-W];s+=a*p[j-W];w+=a}
+    if(y<H-1){a=wv[j];s+=a*p[j+W];w+=a}
+    q[j]=s/w}
+   const t=p;p=q;q=t}
+  for(let j=0;j<N;j++)L[j]=sf[j]?1:sb[j]?0:(p[j]>.5?1:0)}
+ const fill=(st,seen,ok)=>{while(st.length){const j=st.pop(),x=j%W,n=[];if(x>0)n.push(j-1);if(x<W-1)n.push(j+1);if(j>=W)n.push(j-W);if(j<N-W)n.push(j+W);for(const k of n)if(!seen[k]&&ok(k)){seen[k]=1;st.push(k)}}};
+ const keep=new Uint8Array(N),s1=[];for(let j=0;j<N;j++)if(sf[j]&&L[j]===1){keep[j]=1;s1.push(j)}
+ fill(s1,keep,k=>L[k]===1);
+ const bgR=new Uint8Array(N),s2=[],ad=j=>{if(!keep[j]&&!bgR[j]){bgR[j]=1;s2.push(j)}};
+ for(let x=0;x<W;x++){ad(x);ad((H-1)*W+x)}for(let y=0;y<H;y++){ad(y*W);ad(y*W+W-1)}
+ fill(s2,bgR,k=>!keep[k]);
+ let m=new Uint8ClampedArray(N);for(let j=0;j<N;j++)m[j]=bgR[j]?0:255;
+ m=boxBlur(m,W,H,3);for(let j=0;j<N;j++)m[j]=m[j]>127?255:0;
+ const I=new Float32Array(N),P=new Float32Array(N);for(let j=0;j<N;j++){I[j]=(.299*d[j*4]+.587*d[j*4+1]+.114*d[j*4+2])/255;P[j]=m[j]/255}
+ const gq=guided(I,P,W,H,5,.002),o=new Uint8ClampedArray(N);
+ for(let j=0;j<N;j++){const v=(gq[j]-.3)/.4;o[j]=255*(v<0?0:v>1?1:v)}
+ PP.mask=o;PP.undo=[];ppRender()}
+function ppXY(e){const c=$('#ppc'),b=c.getBoundingClientRect();return[(e.clientX-b.left)*c.width/b.width,(e.clientY-b.top)*c.height/b.height]}
+function ppSnap(){if(!PP.base||!PP.mask)return;PP.undo.push(PP.mode==='heal'?{b:new Uint8ClampedArray(PP.base.data)}:{m:new Uint8ClampedArray(PP.mask)});if(PP.undo.length>12)PP.undo.shift()}
+function ppUndo(){const s=PP.undo.pop();if(!s){toast('Nothing to undo');return}if(s.b){PP.base.data.set(s.b);PP.ver++}else PP.mask=s.m;ppRender()}
+function ppStroke(e){if(PP.mode==='heal'){const[x,y]=ppXY(e),r=PP.hb;if(PP.last&&Math.hypot(x-PP.last[0],y-PP.last[1])<r*.7)return;PP.last=[x,y];ppHeal(x,y,r);ppRender();ppLoupe(x,y)}else ppPaint(e)}
+function ppHeal(cx,cy,r){const{W,H}=PP,d=PP.base.data,px=(x,y)=>{x=Math.max(0,Math.min(W-1,Math.round(x)));y=Math.max(0,Math.min(H-1,Math.round(y)));const i=(y*W+x)*4;return[d[i],d[i+1],d[i+2]]};
+ const ring=[];for(let a=0;a<16;a++)for(const f of[1.2,1.5]){const t=a/16*6.2832+(f>1.3?.2:0);ring.push([Math.cos(t)*f*r,Math.sin(t)*f*r])}
+ const tg=ring.map(o=>px(cx+o[0],cy+o[1])),mt=[0,1,2].map(c=>tg.reduce((s,p)=>s+p[c],0)/tg.length);
+ let best=null,bs=1e18;
+ for(let k=0;k<48;k++){const t=k/48*6.2832,dist=(2.8+(k%4)*.8)*r,sx=cx+Math.cos(t)*dist,sy=cy+Math.sin(t)*dist,mg=1.6*r+1;
+  if(sx<mg||sy<mg||sx>W-mg||sy>H-mg)continue;
+  const sr=ring.map(o=>px(sx+o[0],sy+o[1])),ms=[0,1,2].map(c=>sr.reduce((s,p)=>s+p[c],0)/sr.length);
+  let sc=0;for(let i=0;i<sr.length;i++)for(let c=0;c<3;c++){const v=(sr[i][c]-ms[c])-(tg[i][c]-mt[c]);sc+=v*v}
+  sc+=((ms[0]-mt[0])**2+(ms[1]-mt[1])**2+(ms[2]-mt[2])**2)*.5;
+  if(sc<bs){bs=sc;best=[sx,sy,ms]}}
+ if(!best)return;
+ const[sx,sy,ms]=best,R=Math.ceil(r*1.15);
+ for(let y=-R;y<=R;y++)for(let x=-R;x<=R;x++){const q=Math.hypot(x,y);if(q>r*1.1)continue;const tx=Math.round(cx+x),ty=Math.round(cy+y);if(tx<0||ty<0||tx>=W||ty>=H)continue;
+  const w=Math.min(1,Math.max(0,(r*1.1-q)/(r*.45))),sp=px(sx+x,sy+y),i=(ty*W+tx)*4;
+  for(let c=0;c<3;c++)d[i+c]=d[i+c]*(1-w)+Math.max(0,Math.min(255,sp[c]+(mt[c]-ms[c])))*w}
+ PP.ver++}
+function ppCur(e,hide){const cur=$('#ppcur');if(hide||!e||!e.target||e.target.id!=='ppc'||!['erase','restore','heal'].includes(PP.mode)){cur.style.display='none';return}
+ const b=$('#ppc').getBoundingClientRect(),dm=(PP.mode==='heal'?PP.hb:PP.brush)*2*b.width/PP.W;cur.style.display='block';cur.style.width=cur.style.height=dm+'px';cur.style.left=(e.clientX-dm/2)+'px';cur.style.top=(e.clientY-dm/2)+'px';if(PP.mode==='heal'){const q=ppXY(e);ppLoupe(q[0],q[1])}}
+let curT;
+function ppCurPreview(rd){if(!PP.base)return;const cur=$('#ppcur'),b=$('#ppc').getBoundingClientRect(),dm=rd*2*b.width/PP.W;cur.style.display='block';cur.style.width=cur.style.height=dm+'px';cur.style.left=(b.left+b.width/2-dm/2)+'px';cur.style.top=(b.top+b.height/2-dm/2)+'px';clearTimeout(curT);curT=setTimeout(()=>{cur.style.display='none'},1000)}
+function ppRemove(){Object.assign(PP,{src:'',base:null,mask:null,adj:null,adjKey:'',undo:[],mode:''});$('.ppv').classList.remove('has');$('#ppe').style.display='';$('#ppi').textContent='';ppModes()}
+function ppCrop(){openCrop('pp',PP.src)}
+function ppSet(c){PP.W=c.width;PP.H=c.height;PP.base=c.getContext('2d').getImageData(0,0,c.width,c.height);PP.mode='';ppModes();
+ $('.ppv').classList.add('has');$('#ppe').style.display='none';PP.undo=[];PP.ver++;ppFit();ppSample();ppRun()}
+function ppSample(){const{W,H}=PP,d=PP.base.data,a=[],add=(x,y)=>{const i=(y*W+x)*4;a.push([d[i],d[i+1],d[i+2]])};
+ for(let x=0;x<W;x+=3){add(x,0);add(x,Math.min(H-1,3))}
+ for(let y=0;y<H*.4;y+=3){add(0,y);add(W-1,y);add(2,y);add(W-3,y)}
+ let m=[0,1,2].map(k=>a.reduce((s,p)=>s+p[k],0)/a.length);
+ const f=a.filter(p=>Math.hypot(p[0]-m[0],p[1]-m[1],p[2]-m[2])<50);
+ if(f.length>5)m=[0,1,2].map(k=>f.reduce((s,p)=>s+p[k],0)/f.length);PP.ref=m}
+function ppMask(){
+ const{W,H,tol,ref}=PP,d=PP.base.data,N=W*H,dist=new Float32Array(N),bg=new Uint8Array(N),st=[];
+ for(let j=0;j<N;j++){const i=j*4;dist[j]=Math.hypot(d[i]-ref[0],d[i+1]-ref[1],d[i+2]-ref[2])}
+ const push=j=>{if(!bg[j]&&dist[j]<=tol){bg[j]=1;st.push(j)}};
+ for(let x=0;x<W;x++){push(x);push((H-1)*W+x)}for(let y=0;y<H;y++){push(y*W);push(y*W+W-1)}
+ while(st.length){const j=st.pop(),x=j%W;if(x>0)push(j-1);if(x<W-1)push(j+1);if(j>=W)push(j-W);if(j<N-W)push(j+W)}
+ const m=new Uint8ClampedArray(N);
+ for(let j=0;j<N;j++){if(bg[j])continue;const x=j%W,nb=(x>0&&bg[j-1])||(x<W-1&&bg[j+1])||(j>=W&&bg[j-W])||(j<N-W&&bg[j+W]);
+  m[j]=nb?Math.max(0,Math.min(255,(dist[j]-tol*.6)/(tol*.8)*255)):255}
+ const o=new Uint8ClampedArray(m);
+ for(let j=W+1;j<N-W-1;j++){if((m[j]>0&&m[j]<255)||bg[j-1]||bg[j+1]||bg[j-W]||bg[j+W])o[j]=(m[j]*4+m[j-1]+m[j+1]+m[j-W]+m[j+W])/8}
+ PP.mask=o;ppRender()}
+function ppAdj(){const k=[PP.bri,PP.con,PP.sharp,PP.ver].join();if(PP.adjKey===k&&PP.adj)return PP.adj;
+ const{W,H}=PP,N=W*H,d=new Uint8ClampedArray(PP.base.data);
+ if(PP.bri||PP.con){const f=(259*(PP.con+255))/(255*(259-PP.con));for(let i=0;i<N*4;i+=4)for(let c=0;c<3;c++)d[i+c]=f*(d[i+c]-128)+128+PP.bri}
+ if(PP.sharp){const a=PP.sharp/100*2,ch=new Float32Array(N);for(let c=0;c<3;c++){for(let j=0;j<N;j++)ch[j]=d[j*4+c];const bl=bmean(ch,W,H,2);for(let j=0;j<N;j++)d[j*4+c]=ch[j]+a*(ch[j]-bl[j])}}
+ PP.adj=d;PP.adjKey=k;return d}
+function ppRender(){if(!PP.base)return;const c=$('#ppc'),{W,H}=PP;c.width=W;c.height=H;const x=c.getContext('2d');x.fillStyle=PP.bg;x.fillRect(0,0,W,H);
+ const t=document.createElement('canvas');t.width=W;t.height=H;const id=new ImageData(new Uint8ClampedArray(ppAdj()),W,H),d=id.data;
+ if(PP.rm&&PP.mask){const al=ppAlpha();for(let j=0;j<W*H;j++)d[j*4+3]=al[j]}
+ t.getContext('2d').putImageData(id,0,0);x.drawImage(t,0,0);ppSheetPreview();$('#ppi').textContent=`${W} × ${H} px · 300 DPI · prints at ${SZ[PP.sizeI].w} × ${SZ[PP.sizeI].h} mm`}
+function ppPaint(e){const c=$('#ppc'),b=c.getBoundingClientRect(),k=c.width/b.width,cx=(e.clientX-b.left)*k,cy=(e.clientY-b.top)*k,r=PP.brush,{W,H}=PP;
+ for(let y=Math.max(0,Math.floor(cy-r));y<=Math.min(H-1,cy+r);y++)for(let x=Math.max(0,Math.floor(cx-r));x<=Math.min(W-1,cx+r);x++){const q=Math.hypot(x-cx,y-cy);if(q>r)continue;const s=Math.min(1,1.8*(1-q/r)),j=y*W+x,m=PP.mask[j];PP.mask[j]=PP.mode==='erase'?m*(1-s):m+(255-m)*s}
+ ppRender()}
+function ppModes(){document.querySelectorAll('[data-ppm]').forEach(b=>b.classList.toggle('on',b.dataset.ppm===PP.mode||(b.dataset.ppm==='move'&&!PP.mode)));const c=$('#ppc');c.style.cursor=PP.mode==='pick'?'crosshair':PP.mode?'none':'grab';if(PP.mode!=='heal')$('#pplw').classList.remove('on');ppCur(null,true)}
+function crc32(u){let c,crc=-1;for(let n=0;n<u.length;n++){c=(crc^u[n])&255;for(let k=0;k<8;k++)c=c&1?(c>>>1)^0xEDB88320:c>>>1;crc=(crc>>>8)^c}return(crc^-1)>>>0}
+async function withDpi(blob,dpi){const b=new Uint8Array(await blob.arrayBuffer());
+ if(b[0]===0xFF&&b[1]===0xD8){
+  if(b[2]===0xFF&&b[3]===0xE0&&b[6]===0x4A){b[13]=1;b[14]=dpi>>8;b[15]=dpi&255;b[16]=dpi>>8;b[17]=dpi&255;return new Blob([b],{type:'image/jpeg'})}
+  const j=new Uint8Array([0xFF,0xE0,0,16,0x4A,0x46,0x49,0x46,0,1,1,1,dpi>>8,dpi&255,dpi>>8,dpi&255,0,0]),o=new Uint8Array(b.length+j.length);o.set(b.subarray(0,2));o.set(j,2);o.set(b.subarray(2),2+j.length);return new Blob([o],{type:'image/jpeg'})}
+ if(b[0]===0x89&&b[1]===0x50){const ppm=Math.round(dpi/.0254),d=new Uint8Array(21),dv=new DataView(d.buffer);dv.setUint32(0,9);d.set([0x70,0x48,0x59,0x73],4);dv.setUint32(8,ppm);dv.setUint32(12,ppm);d[16]=1;dv.setUint32(17,crc32(d.subarray(4,17)));
+  const o=new Uint8Array(b.length+21);o.set(b.subarray(0,33));o.set(d,33);o.set(b.subarray(33),54);return new Blob([o],{type:'image/png'})}
+ return blob}
+const toBlob=(c,m,q)=>new Promise((ok,no)=>c.toBlob(b=>b?ok(b):no(new Error('The image could not be created.')),m,q));
+const PAPERS=[{n:'4x6in',l:'4 × 6 inch',w:101.6,h:152.4},{n:'5x7in',l:'5 × 7 inch',w:127,h:177.8},{n:'A4',l:'A4',w:210,h:297}];
+function sheetLayout(){const P=PAPERS[+$('#pppaper').value],z=SZ[PP.sizeI],g=2,m=4;let best=null;
+ for(const[pw,ph]of[[P.w,P.h],[P.h,P.w]]){const cols=Math.floor((pw-2*m+g)/(z.w+g)),rows=Math.floor((ph-2*m+g)/(z.h+g)),n=cols*rows;if(n>0&&(!best||n>best.n))best={pw,ph,cols,rows,n,g,P}}
+ return best}
+function sheetCanvas(){const L=sheetLayout();if(!L||!PP.base)return null;const mm=v=>Math.round(v/25.4*300),W=mm(L.pw),H=mm(L.ph),d=ppDims(PP.sizeI),g=mm(L.g),c=document.createElement('canvas');c.width=W;c.height=H;
+ const x=c.getContext('2d');x.fillStyle='#fff';x.fillRect(0,0,W,H);const gw=L.cols*d.W+(L.cols-1)*g,gh=L.rows*d.H+(L.rows-1)*g,x0=Math.round((W-gw)/2),y0=Math.round((H-gh)/2),src=$('#ppc');
+ for(let i=0;i<L.rows;i++)for(let j=0;j<L.cols;j++){const px=x0+j*(d.W+g),py=y0+i*(d.H+g);x.drawImage(src,px,py,d.W,d.H);
+  if($('#ppguides').checked){x.strokeStyle='#9ca3af';x.lineWidth=1;x.strokeRect(px-.5,py-.5,d.W+1,d.H+1)}}
+ return{c,L}}
+let shT;
+function ppSheetPreview(){clearTimeout(shT);shT=setTimeout(()=>{const pv=$('#ppsheet'),inf=$('#ppsinfo');if(!PP.base){inf.textContent='Upload a photo to see the print sheet.';pv.style.display='none';return}
+ const L=sheetLayout();if(!L){inf.textContent='This photo size does not fit on that paper. Choose a bigger paper.';pv.style.display='none';return}
+ const r=sheetCanvas();pv.style.display='block';pv.width=220;pv.height=Math.round(220*r.c.height/r.c.width);pv.getContext('2d').drawImage(r.c,0,0,pv.width,pv.height);
+ inf.textContent=`${L.n} photos (${L.cols} × ${L.rows}) on ${L.P.l} paper, ${L.pw>L.ph?'landscape':'portrait'}.`},180)}
+async function ppSheetDl(t){if(!PP.base){toast('Upload a photo first, then download the sheet.','err');return}ppRender();
+ try{const r=sheetCanvas();if(!r){toast('This photo size does not fit on that paper. Choose a bigger paper.','err');return}const base=`passport_sheet_${r.L.P.n}`;let blob,name;
+  if(t==='pdf'){const{PDFDocument}=await loadLib('pdflib'),doc=await PDFDocument.create(),pt=v=>v/25.4*72;doc.setTitle('Passport photo sheet');doc.setCreator('EasyCV');doc.setProducer('EasyCV');
+   const pg=doc.addPage([pt(r.L.pw),pt(r.L.ph)]),img=await doc.embedJpg(dataBytes(r.c.toDataURL('image/jpeg',.95)));pg.drawImage(img,{x:0,y:0,width:pt(r.L.pw),height:pt(r.L.ph)});blob=new Blob([await doc.save()],{type:'application/pdf'});name=base+'.pdf'}
+  else{const m=t==='png'?'image/png':'image/jpeg';blob=await withDpi(await toBlob(r.c,m,.95),300);name=base+(t==='png'?'.png':'.jpg')}
+  await saveBlob(blob,name);toast('Saved: '+name+(t==='pdf'?'. Print it at 100% (Actual size).':''))}
+ catch(e){console.error(e);toast('Download failed. '+friendlyErr(e),'err')}}
+async function ppLoadFile(f){if(!f)return;
+ if(/heic|heif/i.test(f.type+f.name)){toast('HEIC photos are not supported by this browser. Please export the photo as JPG or PNG first.','err');return}
+ if(!/^image\//.test(f.type)){toast('Please choose an image file (JPG, PNG or WebP).','err');return}
+ if(f.size>30*1024*1024){toast('This photo is very large (over 30 MB). Please choose a smaller one.','err');return}
+ try{const u=await rd(f);await img$(u);PP.src=u;ppCrop()}catch(e){toast(friendlyErr(e),'err')}}
+async function ppDl(t){if(!PP.base){toast('Upload a photo first, then download.','err');return}ppRender();
+ try{const m=t==='png'?'image/png':'image/jpeg',blob=await withDpi(await toBlob($('#ppc'),m,.98),300),z=SZ[PP.sizeI],name=`passport_photo_${String(z.w).replace('.','_')}x${String(z.h).replace('.','_')}mm.${t==='png'?'png':'jpg'}`;
+  await saveBlob(blob,name);toast('Saved: '+name)}
+ catch(e){console.error(e);toast('Download failed. '+friendlyErr(e),'err')}}
+document.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;const d=b.dataset;
+ if(d.ppm){PP.mode=d.ppm==='move'||PP.mode===d.ppm?'':d.ppm;ppModes()}
+ else if(d.ppbg){PP.bg=d.ppbg;document.querySelectorAll('[data-ppbg]').forEach(x=>x.classList.toggle('on',x===b));ppRender()}
+ else if(d.ppdl)ppDl(d.ppdl)
+ else if(d.ppsheet)ppSheetDl(d.ppsheet)
+ else if(d.ppcrop){if(PP.src)ppCrop();else toast('Upload a photo first')}
+ else if(d.ppundo)ppUndo()
+ else if(d.ppz){if(d.ppz==='fit')ppFit();else ppZoom(d.ppz==='in'?1.25:.8)}
+ else if(d.adjtoggle){const ab=$('#ppadb');ab.classList.toggle('open');const o=ab.classList.contains('open');b.textContent=o?'Hide ▴':'Show all ▾';$('#ppadh').style.display=o?'none':''}
+ else if(d.pprm)ppRemove()
+ else if(d.ppmeth){PP.method=d.ppmeth;ppMethUI();if(PP.base)ppRun()}
+ else if(d.ppreset){Object.assign(PP,{shift:0,feather:1,bri:0,con:0,sharp:0});[['ppsh',0],['ppfe',1],['ppbr',0],['ppco',0],['ppsp',0]].forEach(([i,v])=>$('#'+i).value=v);ppRender()}});
+document.addEventListener('input',e=>{const i=e.target.id;
+ if(i==='ppt'){PP.tol=+e.target.value;if(PP.base)ppMask()}
+ else if(i==='ppb'){PP.brush=+e.target.value;$('#ppbv').textContent=PP.brush;ppCurPreview(PP.brush)}
+ else if(i==='pphb'){PP.hb=+e.target.value;$('#pphbv').textContent=PP.hb;ppCurPreview(PP.hb)}
+ else if(i==='pplz'){PP.lz=+e.target.value;$('#pplzv').textContent=PP.lz}
+ else if(i==='ppsh'||i==='ppfe'||i==='ppbr'||i==='ppco'||i==='ppsp'){PP[{ppsh:'shift',ppfe:'feather',ppbr:'bri',ppco:'con',ppsp:'sharp'}[i]]=+e.target.value;ppRender()}
+ else if(i==='ppcc'){PP.bg=e.target.value;document.querySelectorAll('[data-ppbg]').forEach(x=>x.classList.remove('on'));ppRender()}});
+document.addEventListener('change',e=>{const i=e.target.id;
+ if(i==='pppaper'||i==='ppguides'){ppSheetPreview()}
+ else if(i==='ppr'){PP.rm=e.target.checked;ppRender()}
+ else if(i==='pps'){PP.sizeI=+e.target.value;if(PP.src)ppCrop()}});
+const ppv=document.querySelector('.ppv');
+['dragenter','dragover'].forEach(t=>ppv.addEventListener(t,e=>{e.preventDefault();ppv.classList.add('drag')}));
+ppv.addEventListener('dragleave',e=>{if(e.target===ppv)ppv.classList.remove('drag')});
+ppv.addEventListener('drop',async e=>{e.preventDefault();ppv.classList.remove('drag');const f=e.dataTransfer.files&&e.dataTransfer.files[0];if(f)ppLoadFile(f);else toast('Please drop an image file.','err')});
+let ppd=false;
+document.addEventListener('pointerdown',e=>{if(e.target.id!=='ppc'||!PP.base||e.button===1||e.button===2||PP.space||ppPtr.size>1)return;
+ if(PP.mode==='pick'){const c=e.target,b=c.getBoundingClientRect(),x=Math.floor((e.clientX-b.left)*c.width/b.width),y=Math.floor((e.clientY-b.top)*c.height/b.height),i=(y*PP.W+x)*4,q=PP.base.data;PP.ref=[q[i],q[i+1],q[i+2]];PP.mode='';PP.method='colour';ppMethUI();ppModes();ppMask();return}
+ if(PP.mode==='erase'||PP.mode==='restore'||PP.mode==='heal'){ppSnap();PP.last=null;ppd=true;e.target.setPointerCapture(e.pointerId);ppStroke(e);e.preventDefault()}});
+document.addEventListener('pointermove',e=>{ppCur(e);if(ppd)ppStroke(e)});
+document.addEventListener('pointerup',e=>{ppd=false;if(e.pointerType==='touch')ppCur(e,true)});
+
+/* ---------- ATS checker ---------- */
+const ATS={pages:null};
+const STOP=new Set(('a an the and or but if of to in on at by for with from as is are was were be been being am do does did has have had having can could may might will would shall should must not no nor so than then that this these those it its itself he she they them their his her our ours your yours you we us i me my who whom whose which what when where why how all any both each few more most other some such only own same too very just also about above across after again against along among around before below between during into through under until up down out over off once here there while within without per via etc eg ie plus new well able good great best strong excellent high higher level related relevant looking seeking required requirements requirement preferred responsibilities responsible including include includes etc job role position candidate candidates company team teams work working worked works experience experiences year years skill skills knowledge understanding ability abilities need needs needed use used using ensure ensuring support supporting provide providing various multiple like make making help helping take taking day days time week month based open join apply applying application etc one two three first second also proficient proficiency bonus bonuses benefit benefits salary apply send email contact resume cv looking join full part time fulltime parttime hours location office remote hybrid immediate immediately urgent opportunity opportunities dynamic fast growing passionate motivated driven self eager').split(' '));
+const SHORT=new Set('sql seo sem aws sap crm erp api css php ios qa ui ux hr ml ai bi kpi roi b2b b2c cad gis lms cms vpn lan wan tcp js ts vba c++ c# r go'.split(' '));
+const HARD=new Set('excel word powerpoint outlook sql mysql postgresql python java javascript typescript react angular vue node nodejs php laravel django flask html css sass aws azure gcp docker kubernetes git github jira scrum agile kanban figma photoshop illustrator indesign canva premiere sketch seo sem analytics salesforce hubspot sap erp crm tableau powerbi quickbooks tally accounting budgeting forecasting auditing payroll tax recruitment onboarding negotiation copywriting wordpress shopify magento linux windows networking cybersecurity cisco devops testing selenium autocad solidworks matlab spss stata'.split(' '));
+const CUE=/\b(required|requirements?|must|essential|proficien\w*|expert\w*|knowledge of|experience (?:in|with|of)|familiar\w* with|skilled in|hands-on|certified)\b/i;
+const tok=t=>(String(t).toLowerCase().match(/[a-z0-9][a-z0-9+#.\-]*[a-z0-9+#]|[a-z0-9]/g)||[]);
+function stem(w){if(w.length<4||/[+#.\-]/.test(w))return w;w=w.replace(/ies$/,'y').replace(/(ment|ing|ed|es|s|ly)$/,'');return w.replace(/e$/,'')}
+const okw=w=>!STOP.has(w)&&(w.length>=3||SHORT.has(w))&&!/^\d+$/.test(w);
+function jdKeywords(jd){
+ const U={},B={};
+ jd.split(/[\n.;•!?]+/).forEach(sent=>{const req=CUE.test(sent);sent.split(/[,:()\/|–—]+/).forEach(se=>{const tk=tok(se);
+  tk.forEach((w,i)=>{if(okw(w)){const k=stem(w),e=U[k]||(U[k]={k:w,n:0,req:0});e.n++;if(req)e.req=1}
+   if(i<tk.length-1&&okw(w)&&okw(tk[i+1])&&w.length>2&&tk[i+1].length>2){const k=stem(w)+' '+stem(tk[i+1]),e=B[k]||(B[k]={k:w+' '+tk[i+1],n:0,req:0});e.n++;if(req)e.req=1}})})});
+ const wt=(e,hard)=>e.n+1.5*e.req+(hard?1.5:0);
+ const bis=Object.entries(B).map(([s,e])=>({s,k:e.k,w:wt(e,0),n:e.n,type:'phrase',e})).filter(x=>x.n>=2||(x.e.req&&true)).sort((a,b)=>b.w-a.w).slice(0,8);
+ const inBi=new Set();bis.forEach(b=>b.s.split(' ').forEach(p=>inBi.add(p)));
+ const uns=Object.entries(U).map(([s,e])=>({s,k:e.k,w:wt(e,HARD.has(e.k)||SHORT.has(e.k)||/[+#]/.test(e.k)),n:e.n,type:HARD.has(e.k)||SHORT.has(e.k)||/[+#]/.test(e.k)?'skill':'term',e})).filter(x=>!(inBi.has(x.s)&&x.n<=2)&&(x.w>=2||x.type==='skill')).sort((a,b)=>b.w-a.w||b.k.length-a.k.length).slice(0,20);
+ return[...bis,...uns].map(x=>({s:x.s,k:x.k,w:x.w,type:x.type}))}
+function kwMatch(text,items){const tk=tok(text).map(stem),set=new Set(tk),norm=' '+tk.join(' ')+' ';
+ return items.map(x=>({...x,hit:x.s.includes(' ')?norm.includes(' '+x.s+' '):set.has(x.s)}))}
+
+const VERBS='managed led developed created designed implemented improved increased reduced delivered coordinated analysed analyzed built launched achieved organised organized trained supervised planned executed handled prepared maintained negotiated generated established streamlined optimized optimised collaborated resolved produced monitored initiated mentored presented researched'.split(' ');
+async function atsReadFile(f){
+ const n=f.name.toLowerCase(),buf=await f.arrayBuffer();ATS.pages=null;
+ if(n.endsWith('.txt'))return new TextDecoder().decode(buf);
+ if(n.endsWith('.docx')){const Z=await loadLib('jszip');
+  const z=await Z.loadAsync(buf),f2=z.file('word/document.xml');if(!f2)throw new Error('This Word file could not be read.');
+  const x=await f2.async('string');
+  return x.replace(/<\/w:p>/g,'\n').replace(/<w:tab\/>/g,' ').replace(/<w:br[^>]*\/>/g,'\n').replace(/<[^>]+>/g,'').replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&quot;/g,'"').replace(/&apos;/g,"'")}
+ if(n.endsWith('.pdf')){const P=await loadLib('pdfjs');let doc,lastErr;
+  for(const w of PDFJS_WORKERS){try{P.GlobalWorkerOptions.workerSrc=w;doc=await P.getDocument({data:new Uint8Array(buf.slice(0))}).promise;break}catch(e){lastErr=e;if(e&&/password/i.test(String(e.name+e.message)))throw new Error('This PDF is password-protected. Please remove the password and try again.')}}
+  if(!doc)throw new Error('This PDF could not be read ('+String((lastErr&&lastErr.message)||'unknown error').slice(0,80)+'). Try a Word file, or paste your CV text into the box.');
+  ATS.pages=doc.numPages;let t='';
+  for(let i=1;i<=doc.numPages;i++){t+=atsPdfText((await(await doc.getPage(i)).getTextContent()).items)+'\n'}
+  return t}
+ throw new Error('Please upload a PDF, Word (.docx) or .txt file.')}
+function cvText(){const L=[S.name,S.title,[S.phone,...(S.phones||[]),S.email,S.address].filter(Boolean).join(' | '),''];
+ S.order.forEach(id=>{if(!body(id))return;L.push(SEC[id].toUpperCase());
+  if(id==='contact')return;
+  if(id==='social')S.social.filter(x=>x.u.trim()).forEach(x=>L.push(x.n+': '+x.u));
+  else if(id==='summary'||id==='objective')L.push(S[id]);
+  else if(id==='exp'||id==='edu'||id==='cert')S[id].filter(x=>x.role||x.org).forEach(x=>{L.push(x.role+' - '+x.org+(x.per?' ('+x.per+')':''));String(x.desc||'').split('\n').filter(Boolean).forEach(d=>L.push('• '+d))});
+  else if(id==='computer'||id==='soft')L.push(S[id]);
+  else if(id==='lang')S.lang.filter(x=>x.n).forEach(x=>L.push(x.n+' ('+x.l+')'));
+  else if(id==='personal')S.personal.filter(x=>x.v).forEach(x=>L.push(x.k+': '+x.v));
+  L.push('')});
+ return L.join('\n')}
+function atsPdfText(items){let t='',lastY=null,lastEnd=0;
+ for(const it of items){const str=it.str||'';if(!str&&!it.hasEOL)continue;
+  const x=it.transform[4],y=it.transform[5],h=Math.abs(it.transform[3])||it.height||10;
+  if(lastY!==null){if(Math.abs(y-lastY)>h*.5)t+='\n';else if(x-lastEnd>h*.18)t+=' '}
+  t+=str;lastY=y;lastEnd=x+(it.width||0);if(it.hasEOL){if(!t.endsWith('\n'))t+='\n';lastY=null}}
+ return t}
+function findEmail(t){let m=t.match(/[A-Za-z0-9._%+\-]+@[A-Za-z0-9\-]+(?:\.[A-Za-z0-9\-]+)*\.[A-Za-z]{2,}/);if(m)return m[0];
+ m=t.match(/[A-Za-z0-9._%+\-]+ ?@ ?[A-Za-z0-9\-]+(?: ?\. ?[A-Za-z0-9\-]+)* ?\. ?[A-Za-z]{2,}/);if(m)return m[0].replace(/\s+/g,'');
+ m=t.match(/(?:[A-Za-z0-9._%+\-] ){2,}[A-Za-z0-9._%+\-] ?@ ?(?:[A-Za-z0-9\-] ){2,}[A-Za-z0-9\-] ?\. ?(?:[A-Za-z] ?){2,}/);if(m)return m[0].replace(/\s+/g,'');
+ return ''}
+function findPhone(t){const re=/\+?\(?\d[\d\s().\-–]{7,}\d/g;let m;while((m=re.exec(t))){const x=m[0].trim(),d=x.replace(/\D/g,'');if(d.length<9||d.length>15)continue;if(/^(19|20)\d{2}\D+(19|20)\d{2}/.test(x))continue;return x}return ''}
+function atsAnalyze(text,pages,jd){
+ const t=text.replace(/\u00a0/g,' ').replace(/[\u200b-\u200d\ufeff]/g,'').replace(/\r\n?/g,'\n'),low=t.toLowerCase(),words=(t.match(/\S+/g)||[]).length,lines=t.split('\n').map(x=>x.replace(/[ \t]+/g,' ').trim()).filter(Boolean);
+ const head=(re,up)=>lines.some(l=>{const w=l.split(' '),sp=w.filter(x=>x.length===1).length/w.length>.6&&w.length>=4,ls=sp?l.toLowerCase().replace(/ /g,''):l.toLowerCase();return(w.length<=6||sp)&&(sp?new RegExp(re.source.replace(/\\b/g,'')).test(ls):re.test(ls))})||up.test(t)||(lines.length<6&&re.test(low));
+ const cats=[],checks=[],cat=(n,s,m,fix)=>cats.push({n,s,m,fix:fix||''}),ck=(st,ti,tip,keep)=>checks.push({st,ti,tip:st==='pass'&&!keep?'':tip});
+ let s1=words>=200?15:words>=80?8:0;cat('Readable text',s1,15,'Make sure your CV is a text-based PDF or Word file, not a scan or a picture of text.');
+ ck(s1===15?'pass':s1?'warn':'fail',s1===15?'Text can be read':'Very little text found','If your PDF is a scan or made from images, ATS cannot read it. Export a text-based PDF or use a Word file.');
+ const em=findEmail(t),ph=findPhone(t),pr=/(linkedin\.com|github\.com|behance\.net|dribbble\.com|facebook\.com|instagram\.com|portfolio|https?:\/\/|www\.|address|location|street|road|house|village|post office|dhaka|chattogram|chittagong|sylhet|khulna|rajshahi|barishal|rangpur|mymensingh|bangladesh|india|usa|united states|canada|australia|dubai|uae|saudi|malaysia|singapore)/i.test(t);
+ const miss=[!em&&'an email address',!ph&&'a phone number',!pr&&'your city or a LinkedIn/portfolio link'].filter(Boolean);
+ cat('Contact details',(em?5:0)+(ph?5:0)+(pr?5:0),15,miss.length?'Add '+miss.join(', ')+' as plain text near the top.':'');
+ ck(em?'pass':'fail',em?'Email found':'No email found',em?'Detected: '+em:'No email address was found in the text we could read. If your CV shows one, it may be stored as an image or only as a link. Type it as plain text, or check the text box on the left.',!!em);
+ ck(ph?'pass':'fail',ph?'Phone number found':'No phone number found',ph?'Detected: '+ph:'Add a phone number as plain text so recruiters can call you.',!!ph);
+ ck(pr?'pass':'warn',pr?'Address or online profile found':'No address or online profile','Add your city or a LinkedIn / portfolio link.');
+ const sec=[['Summary or objective',/\b(summary|profile|objective|about me)\b/,/\b(SUMMARY|PROFILE|OBJECTIVE|ABOUT ME)\b/,5],['Work experience',/\b(experience|employment|work history)\b/,/\b(EXPERIENCE|EMPLOYMENT|WORK HISTORY)\b/,8],['Education',/\b(education|academic|qualifications?)\b/,/\b(EDUCATION|ACADEMIC|QUALIFICATIONS?)\b/,6],['Skills',/\b(skills?|competenc\w+)\b/,/\b(SKILLS?|COMPETENC\w+)\b/,6]];
+ let s3=0;const ms=[];sec.forEach(([n,re,up,pt])=>{const f=head(re,up);if(f)s3+=pt;else ms.push(n);ck(f?'pass':'fail',f?n+' section found':'No "'+n+'" section','Add a clearly named "'+n+'" heading using standard words.')});
+ cat('Standard sections',s3,25,ms.length?'Add clear headings for: '+ms.join(', ')+'. Use plain names like "Work Experience" and "Education".':'');
+ let s4=words>=300&&words<=900?10:words>=200&&words<=1200?6:3;if(pages&&pages>2)s4=Math.min(s4,6);
+ cat('Length',s4,10,words<300?'Your CV is short ('+words+' words). Add more detail about your achievements and skills.':'Your CV is long ('+words+' words'+(pages?', '+pages+' pages':'')+'). Keep it to 1–2 pages and remove old or less relevant details.');
+ ck(s4===10?'pass':'warn',s4===10?'Good length ('+words+' words'+(pages?', '+pages+' page'+(pages>1?'s':''):'')+')':'Length could be better ('+words+' words'+(pages?', '+pages+' pages':'')+')','Most CVs work best at about 300 to 900 words and no more than 2 pages.');
+ const bl=(t.match(/^\s*[•▪●◦·\-–*]/gm)||[]).length+(t.match(/[•▪●◦]/g)||[]).length,s5=bl>=5?10:bl>=1?5:2;cat('Bullet points',s5,10,'Turn your duties into short bullet points (one achievement per line).');
+ ck(s5===10?'pass':'warn',s5===10?'Bullet points used':'Few or no bullet points','Short bullet points make your achievements easier for ATS and people to scan.');
+ const vs=[...new Set(VERBS.filter(v=>new RegExp('\\b'+v+'\\b').test(low)))],s6=vs.length>=6?10:vs.length>=3?6:vs.length?3:0;cat('Action verbs',s6,10,'Start bullets with action verbs such as managed, led, built, improved or delivered.');
+ ck(s6===10?'pass':'warn',s6===10?'Strong action verbs found ('+vs.length+')':'Use more action verbs ('+vs.length+' found)','Start bullets with words like managed, led, built, improved or delivered.');
+ const clean=t.replace(/[\w.+-]+ ?@ ?[\w-]+( ?\. ?[\w-]+)* ?\. ?[A-Za-z]{2,}/g,' ').replace(/\+?\(?\d[\d\s().\-–]{7,}\d/g,' ').replace(/\b(19|20)\d{2}\b/g,' '),nm=(clean.match(/\d+(\.\d+)?\s?%|[$৳£€]\s?\d|\b\d{2,}\b/g)||[]).length,s7=nm>=4?10:nm>=1?5:0;cat('Measurable results',s7,10,'Add numbers to your achievements, such as "increased sales by 20%" or "managed a team of 8".');
+ ck(s7===10?'pass':'warn',s7===10?'Numbers and results found':'Few measurable results','Add numbers, such as "increased sales by 20%" or "managed a team of 8".');
+ const yr=(t.match(/\b(19|20)\d{2}\b/g)||[]).length,s8=yr>=2?5:yr?2:0;cat('Dates',s8,5,'Add start and end years to every job and qualification.');
+ ck(s8===5?'pass':'warn',s8===5?'Dates found':'Few dates found','Add start and end years to jobs and education.');
+ let base=cats.reduce((a,c)=>a+c.s,0),kw=null,total=base;
+ if(jd&&jd.trim().length>30){const items=kwMatch(t,jdKeywords(jd)),sum=a=>a.reduce((x,y)=>x+y.w,0),all=sum(items)||1,hit=items.filter(x=>x.hit);
+  kw={pct:Math.round(sum(hit)/all*100),matched:hit,missing:items.filter(x=>!x.hit).sort((a,b)=>b.w-a.w),count:items.length};total=Math.round(base*.7+kw.pct*.3)}
+ const fixes=cats.filter(c=>c.m-c.s>0&&c.fix).map(c=>({pts:Math.round((c.m-c.s)*(kw?.7:1)),text:c.fix,n:c.n}));
+ if(kw&&kw.pct<85&&kw.missing.length)fixes.push({pts:Math.round(.3*(100-kw.pct)),text:'Add these job keywords where they truly match your experience: '+kw.missing.slice(0,6).map(x=>x.k).join(', ')+'.',n:'Job keywords'});
+ fixes.sort((a,b)=>b.pts-a.pts);
+ return{total,base,cats,checks,kw,words,fixes:fixes.filter(f=>f.pts>0).slice(0,4)}}
+function atsShow0(r){
+ const c=r.total>=80?'#15803d':r.total>=60?'#b45309':'#b91c1c',lab=r.total>=85?'Excellent':r.total>=70?'Good':r.total>=50?'Needs work':'Poor',L=2*Math.PI*52,esc2=esc;
+ const order={fail:0,warn:1,pass:2},ic={pass:'✓',warn:'!',fail:'✕'};
+ const DESC={'Readable text':'The file contains real, selectable text (not a scan or image).','Contact details':'Email, phone number and an address or online profile as plain text.','Standard sections':'Clear headings: Summary, Work Experience, Education, Skills.','Length':'About 300–900 words, and no more than 2 pages.','Bullet points':'Achievements written as short bullet points.','Action verbs':'Strong verbs such as managed, led, built, improved.','Measurable results':'Numbers, percentages and amounts that show impact.','Dates':'Start and end years for jobs and education.'};
+ $('#atres').innerHTML=`<div class="est"><b>Estimate only.</b> This is not a result from any employer's ATS. It shows how well your CV follows common ATS-friendly rules.</div>
+ <div class="ath"><svg class="ring" viewBox="0 0 120 120" role="img" aria-label="Estimated score ${r.total} out of 100"><circle cx="60" cy="60" r="52" fill="none" stroke="#e2e8f0" stroke-width="10"/><circle cx="60" cy="60" r="52" fill="none" stroke="${c}" stroke-width="10" stroke-linecap="round" stroke-dasharray="0 ${L}" data-d="${L*r.total/100}" style="transition:stroke-dasharray 1.1s ease" transform="rotate(-90 60 60)"/><text id="atsn" x="60" y="68" text-anchor="middle" font-size="32" font-weight="700" fill="#0f172a">0</text></svg>
+ <div><h3 style="color:${c}">${lab}</h3><p>${r.kw?'Estimated score: 70% CV readiness ('+r.base+'/100) plus 30% job keyword match ('+r.kw.pct+'%).':'Estimated ATS-readiness score out of 100. Add a job description to also check keywords.'}</p></div></div>
+ ${r.fixes.length?`<h4>Fix these first</h4><ol class="fx">${r.fixes.map(f=>`<li><b>+${f.pts} points</b> <span>${esc2(f.n)}</span><small>${esc2(f.text)}</small></li>`).join('')}</ol>`:'<p class="atn"><b>Nice work.</b> No big problems found. Check the details below.</p>'}
+ <h4>Score breakdown</h4>${r.cats.map(x=>`<div class="cat"><span>${x.n}</span><i><u style="width:${x.s/x.m*100}%"></u></i><em>${x.s}/${x.m}</em></div>`).join('')}
+ ${r.kw?`<h4>Job keyword match: ${r.kw.pct}%</h4><div class="kws" aria-label="Keywords from the job description">${r.kw.matched.map(k=>`<span class="kw ok" title="Found in your CV">✓ ${esc2(k.k)}</span>`).join('')}${r.kw.missing.map(k=>`<span class="kw no" title="Not found in your CV">${esc2(k.k)}</span>`).join('')}</div><p class="atn">We picked ${r.kw.count} important words and phrases from the job post. Green ones appear in your CV (word endings like campaign/campaigns are treated as the same). Orange ones were not found. Only add the ones that truly match your experience.</p>`:`<h4>Job keyword match</h4><p class="atn">Paste a job description on the left to see which important keywords your CV is missing.</p>`}
+ <h4>What to check</h4>${[...r.checks].sort((a,b)=>order[a.st]-order[b.st]).map(x=>`<div class="ck ${x.st}"><span aria-hidden="true">${ic[x.st]}</span><div><b>${esc2(x.ti)}</b>${x.tip?`<small>${esc2(x.tip)}</small>`:''}</div></div>`).join('')}
+ <details class="how"><summary>How is this score calculated?</summary>
+  <p>Your CV starts with up to 100 points, split across eight checks:</p>
+  <ul>${r.cats.map(x=>`<li><b>${x.n} (${x.m} pts):</b> ${esc2(DESC[x.n]||'')}</li>`).join('')}</ul>
+  <p>If you paste a job description, the final score is 70% CV readiness + 30% keyword match. Keywords are compared as whole words or phrases, so "SQL" does not match "MySQL" and "Java" does not match "JavaScript".</p>
+  <p><b>Why it is only an estimate:</b> every company uses a different ATS and different settings, and most do not give candidates a score at all. This tool also cannot see your file's layout, such as columns, tables, text boxes, images or fonts, which can affect real ATS parsing. Use the score as a checklist, not as a promise.</p>
+ </details>
+ <p class="atn">Your CV text stays on your device. It is analysed inside your browser and is not uploaded.</p>`}
+function atsShow(r){atsShow0(r);requestAnimationFrame(()=>{const c=document.querySelector('.ring circle[data-d]');if(c)c.setAttribute('stroke-dasharray',c.dataset.d+' '+(2*Math.PI*52));const e=$('#atsn');if(!e)return;const t0=performance.now(),tick=n=>{const k=Math.min(1,(n-t0)/1100);e.textContent=Math.round(r.total*k);if(k<1)requestAnimationFrame(tick)};requestAnimationFrame(tick)})}
+let atsBusy=false;
+async function atsFlow(job){if(atsBusy){toast('Please wait, checking your CV…');return}atsBusy=true;
+ const steps=['Reading your CV…','Checking contact details…','Checking sections and structure…','Matching keywords…','Calculating your score…'],T=3000;
+ $('#atres').innerHTML=`<div class="atld"><div class="spin"></div><b id="atls">${steps[0]}</b><div class="pbar"><u id="atlb"></u></div><small>Please wait a few seconds</small></div>`;
+ requestAnimationFrame(()=>requestAnimationFrame(()=>{const b=$('#atlb');if(b){b.style.transition='width '+T+'ms linear';b.style.width='100%'}}));
+ let i=0;const iv=setInterval(()=>{i=Math.min(steps.length-1,i+1);const e=$('#atls');if(e)e.textContent=steps[i]},T/steps.length),t0=Date.now();let res,err;
+ try{res=await job()}catch(e){err=e}
+ await new Promise(r=>setTimeout(r,Math.max(0,T-(Date.now()-t0))));clearInterval(iv);
+ if(err)$('#atres').innerHTML=`<div class="atp">${esc(String(err.message||err))}</div>`;else atsShow(res);
+ atsBusy=false}
+function atsRun(){atsFlow(async()=>{const t=$('#att').value;if(t.trim().split(/\s+/).length<30)throw new Error('Please upload your CV or paste your CV text first (at least a few lines).');return atsAnalyze(t,ATS.pages,$('#atj').value)})}
+function atsUse(){ATS.pages=null;$('#atn').textContent='CV from EasyCV';atsFlow(async()=>{const t=cvText();$('#att').value=t;return atsAnalyze(t,null,$('#atj').value)})}
+function atsFile(f){if(!f)return;$('#atn').textContent=f.name;atsFlow(async()=>{const t=(await atsReadFile(f)).trim();$('#att').value=t;return atsAnalyze(t,ATS.pages,$('#atj').value)})}
+$('#atf').addEventListener('change',e=>{atsFile(e.target.files[0]);e.target.value=''});
+const adz=$('#adz');
+['dragenter','dragover'].forEach(t=>adz.addEventListener(t,e=>{e.preventDefault();adz.classList.add('drag')}));
+['dragleave','drop'].forEach(t=>adz.addEventListener(t,e=>{e.preventDefault();adz.classList.remove('drag')}));
+adz.addEventListener('drop',e=>atsFile(e.dataTransfer.files&&e.dataTransfer.files[0]));
+document.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;
+ if(b.dataset.atrun)atsRun();
+ else if(b.dataset.atuse)atsUse()});
+/* ---------- privacy, auto-save and dialogs ---------- */
+const AUTO_KEY='ecv_auto';
+const lsGet=k=>{try{return localStorage.getItem(k)}catch(e){return null}},lsSet=(k,v)=>{try{localStorage.setItem(k,v);return true}catch(e){return false}},lsDel=k=>{try{localStorage.removeItem(k)}catch(e){}};
+const autoOn=()=>lsGet(AUTO_KEY)!=='0';let saveWarned=false;
+function saveNow(){if(!autoOn())return;if(!lsSet('ecv4',JSON.stringify(S))&&!saveWarned){saveWarned=true;toast('Auto-save could not store your CV (browser storage is full or blocked). Your CV still works, but download it before you close this page.','err')}}
+const autNote=()=>`<p class="hint aut">${autoOn()?'🔒 Auto-save is on. Your CV is kept only in this browser, on this device.':'Auto-save is off. Your CV is not being saved.'} <button class="lnk" data-privacy="1">Manage</button></p>`;
+function openDlg(id){const d=$('#'+id);d._prev=document.activeElement;d.classList.add('on');const f=d.querySelector('.btn.p,button,input');if(f)f.focus()}
+function closeDlg(id){const d=$('#'+id);d.classList.remove('on');if(d._prev&&d._prev.focus)d._prev.focus()}
+function askConfirm(title,text,ok){return new Promise(res=>{const d=$('#dlg-conf');$('#dlg-conf-t').textContent=title;$('#dlg-conf-p').textContent=text;$('#dlg-conf-ok').textContent=ok||'Confirm';openDlg('dlg-conf');
+ const done=v=>{d.removeEventListener('click',h);d._esc=null;closeDlg('dlg-conf');res(v)},h=e=>{const b=e.target.closest('[data-cf]');if(b)done(b.dataset.cf==='yes');else if(e.target===d)done(false)};d.addEventListener('click',h);d._esc=()=>done(false)})}
+function wipeSaved(){askConfirm('Delete saved data?','This removes the CV saved in this browser and resets the form to the sample. Files you already downloaded are not affected.','Delete saved data').then(ok=>{if(!ok)return;lsDel('ecv4');S=JSON.parse(JSON.stringify(DEF));S.open='profile';form();bar();draw();buildTpl();toast('Saved data deleted from this device.')})}
+document.addEventListener('click',e=>{
+ if(e.target.closest('[data-privacy]')){$('#privauto').checked=autoOn();openDlg('dlg-priv');return}
+ const dc=e.target.closest('[data-dlgclose]');if(dc){closeDlg(dc.dataset.dlgclose);return}
+ if(e.target.closest('[data-wipe]')){wipeSaved();return}
+ if(e.target.classList&&e.target.classList.contains('dlg')&&e.target.id==='dlg-priv')closeDlg('dlg-priv');
+ const sk=e.target.closest('.skip');if(sk){e.preventDefault();const m=[...document.querySelectorAll('main,[role=main]')].find(x=>x.offsetParent!==null);if(m){m.setAttribute('tabindex','-1');m.focus();m.scrollIntoView()}}});
+document.addEventListener('change',e=>{if(e.target.id==='privauto'){if(e.target.checked){lsSet(AUTO_KEY,'1');saveNow();toast('Auto-save is on.')}else{lsSet(AUTO_KEY,'0');lsDel('ecv4');toast('Auto-save is off. Saved data was deleted from this device.')}form()}});
+document.addEventListener('keydown',e=>{
+ if(e.key==='Escape'){const d=document.querySelector('.dlg.on');if(d){if(d._esc)d._esc();else closeDlg(d.id);return}
+  if($('#cm').classList.contains('on')){$('#cm').classList.remove('on');return}
+  document.querySelectorAll('.tdd.open,.dd.open').forEach(x=>x.classList.remove('open'))}
+ const ch=e.target.closest&&e.target.closest('.ch[role=button]');if(ch&&e.target===ch&&(e.key==='Enter'||e.key===' ')){e.preventDefault();ch.click()}});
+document.querySelectorAll('.sec').forEach((sec,i)=>{const h=sec.querySelector('h2');if(h){h.id=h.id||'sec-h-'+i;sec.setAttribute('role','region');sec.setAttribute('aria-labelledby',h.id)}});
+const ppPtr=new Map();let pn=null,pz=0;
+function ppFit(keep){const st=$('#ppst');if(!PP.base||!st.clientWidth)return;const cw=st.clientWidth,ch=st.clientHeight;PP.f=Math.min((cw-28)/PP.W,(ch-28)/PP.H);
+ const c=$('#ppc');c.style.width=PP.W*PP.f+'px';c.style.height=PP.H*PP.f+'px';
+ if(!keep||PP.z===1){PP.z=1;PP.tx=(cw-PP.W*PP.f)/2;PP.ty=(ch-PP.H*PP.f)/2}ppView()}
+function ppView(){$('#ppvw').style.transform=`translate(${PP.tx}px,${PP.ty}px) scale(${PP.z})`;$('#ppzv').textContent=Math.round(PP.z*100)+'%'}
+function ppZoom(f,cx,cy){const r=$('#ppst').getBoundingClientRect();if(cx==null){cx=r.width/2;cy=r.height/2}const zn=Math.max(.5,Math.min(10,PP.z*f)),k=zn/PP.z;PP.tx=cx-(cx-PP.tx)*k;PP.ty=cy-(cy-PP.ty)*k;PP.z=zn;ppView()}
+function ppLoupe(x,y){const lp=$('#pplp');if(!lp||!PP.base)return;const g=lp.getContext('2d'),S=240/PP.lz;g.fillStyle='#e2e8f0';g.fillRect(0,0,240,240);g.drawImage($('#ppc'),x-S/2,y-S/2,S,S,0,0,240,240);
+ g.lineWidth=2;g.strokeStyle='#fff';g.beginPath();g.arc(120,120,PP.hb*PP.lz,0,6.2832);g.stroke();g.lineWidth=1;g.strokeStyle='#0f172a';g.beginPath();g.arc(120,120,PP.hb*PP.lz+1.5,0,6.2832);g.stroke();$('#pplw').classList.add('on')}
+const pst=$('#ppst');
+pst.addEventListener('wheel',e=>{e.preventDefault();const r=pst.getBoundingClientRect();ppZoom(Math.exp(-e.deltaY*.0015),e.clientX-r.left,e.clientY-r.top)},{passive:false});
+pst.addEventListener('contextmenu',e=>e.preventDefault());
+pst.addEventListener('pointerdown',e=>{ppPtr.set(e.pointerId,[e.clientX,e.clientY]);
+ if(ppPtr.size===2){ppd=false;const v=[...ppPtr.values()];pz=Math.hypot(v[0][0]-v[1][0],v[0][1]-v[1][1]);pn=null;return}
+ if(!PP.mode||e.button===1||e.button===2||PP.space){pn=[e.clientX-PP.tx,e.clientY-PP.ty];pst.setPointerCapture(e.pointerId);pst.style.cursor='grabbing';e.preventDefault()}});
+pst.addEventListener('pointermove',e=>{if(!ppPtr.has(e.pointerId))return;ppPtr.set(e.pointerId,[e.clientX,e.clientY]);
+ if(ppPtr.size===2){const v=[...ppPtr.values()],d=Math.hypot(v[0][0]-v[1][0],v[0][1]-v[1][1]),r=pst.getBoundingClientRect();if(pz)ppZoom(d/pz,(v[0][0]+v[1][0])/2-r.left,(v[0][1]+v[1][1])/2-r.top);pz=d;return}
+ if(pn){PP.tx=e.clientX-pn[0];PP.ty=e.clientY-pn[1];ppView()}});
+const pend=e=>{ppPtr.delete(e.pointerId);if(ppPtr.size<2)pz=0;pn=null;pst.style.cursor=''};
+pst.addEventListener('pointerup',pend);pst.addEventListener('pointercancel',pend);
+document.addEventListener('keydown',e=>{if(e.code==='Space'&&document.body.classList.contains('ph')&&!/INPUT|TEXTAREA|SELECT|BUTTON/.test(e.target.tagName)){PP.space=true;e.preventDefault()}});
+document.addEventListener('keyup',e=>{if(e.code==='Space')PP.space=false});
+new ResizeObserver(()=>ppFit(true)).observe(pst);
+(function(){const tr=$('#tpltrack');let hold=false;
+ ['mouseenter','touchstart','focusin'].forEach(t=>tr.addEventListener(t,()=>{hold=true},{passive:true}));
+ ['mouseleave','touchend','focusout'].forEach(t=>tr.addEventListener(t,()=>{hold=false},{passive:true}));
+ if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+ setInterval(()=>{const b=document.body.classList;if(hold||b.contains('in')||b.contains('ph'))return;const w=(tr.firstElementChild?tr.firstElementChild.offsetWidth:250)+22;
+  if(tr.scrollLeft+tr.clientWidth>=tr.scrollWidth-6)tr.scrollTo({left:0});else tr.scrollBy({left:w})},3200)})();
+const mq=matchMedia('(min-width:901px)');
+function placePP(){const rr=$('#ppside'),a=$('#ppanch');[$('#ppadj'),$('#pphl')].forEach(el=>{if(mq.matches)rr.appendChild(el);else a.parentNode.insertBefore(el,a)})}
+mq.addEventListener('change',placePP);placePP();ppModes();
+buildTpl();form();bar();draw();
+</script>
+</body>
+</html>
